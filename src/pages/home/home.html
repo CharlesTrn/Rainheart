@@ -10,22 +10,11 @@
 <ion-content padding>
   <h3>Zones du jardin</h3>
   <div class="gallery">
-
-    <div class="zone">
+    <div class="zone" *ngFor="let zone of zones">
         <div class="zone__details">
-          Zone 1
-        </div>
-    </div>
-    <div class="zone">
-        <div class="zone__details">
-          Zone 2
-        </div>
-    </div>
-    <div class="zone">
-        <div class="zone__details">
-          Zone 3
+          Zone {{zone.number}}
         </div>
     </div>
   </div>
-  <button ion-button secondary menuToggle>Ajouter zone</button>
+  <button ion-button (click)="addZone($index)">Ajouter zone</button>
 </ion-content>
