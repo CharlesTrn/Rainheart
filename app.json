@@ -1,0 +1,7 @@
+{
+        "name": "Rainheart",
+        "description": "L'application du système d'arrosage connecté Rainheart.",
+        "repository": "https://github.com/CharlesTrn/Rainheart.git",
+        "logo": "https://lh5.googleusercontent.com/-w7RlvaKT6NhSvRZQDlY4a3HfMbklKAmtfLhVyUen8sY2TZ1dAE7AR8kiDp4sVqOjnbtOKNS_G4v0g=w1920-h949",
+        "keywords": ["ionic3", "heroku", "rainheart"]
+}
