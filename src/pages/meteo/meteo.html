@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Météo</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="meteo">
+  <ion-grid *ngIf="weather">
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2 class="location">{{weather.name}}</h2>
+        <div class="icon">
+          <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png">
+        </div>
+        <h3 class="description">{{weather.weather[0].description}}</h3>
+        <h1 class="temp">{{weather.main.temp}}°C</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
