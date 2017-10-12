@@ -1,9 +1,5 @@
-/*var express = require(‘express’);
-var path = require(‘path’);
+var express = require('express');
 var app = express();
-app.use(express.static(path.resolve(__dirname, “www”)));
-app.set(‘port’, process.env.PORT || 3000);
-app.listen(app.get(‘port’), function() {
- console.log(“listening to Port”, app.get(“port”));
-});*/
-app.use(express.static("www"));
+
+app.use(express.static(__dirname + "/www"));
+app.listen(process.env.PORT || 5000);
