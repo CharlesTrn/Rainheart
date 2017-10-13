@@ -6,12 +6,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MeteoPage } from '../pages/meteo/meteo';
 import { OptionsPage } from '../pages/options/options';
+import { ZonePage } from '../pages/zone/zone';
 import { HttpModule } from '@angular/http';
 import { Geolocation }from '@ionic-native/geolocation';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WeatherProvider } from '../providers/weather/weather';
+import { ZoneProvider } from '../providers/zone/zone';
 
 
 
@@ -20,7 +22,8 @@ import { WeatherProvider } from '../providers/weather/weather';
     MyApp,
     HomePage,
     MeteoPage,
-    OptionsPage
+    OptionsPage,
+    ZonePage
   ],
   imports: [
     BrowserModule,
@@ -32,14 +35,16 @@ import { WeatherProvider } from '../providers/weather/weather';
     MyApp,
     HomePage,
     MeteoPage,
-    OptionsPage
+    OptionsPage,
+    ZonePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     WeatherProvider,
-    Geolocation
+    Geolocation,
+    ZoneProvider
   ]
 })
 export class AppModule {}

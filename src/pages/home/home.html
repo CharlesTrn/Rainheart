@@ -10,14 +10,11 @@
 <ion-content padding>
   <h3>Zones du jardin</h3>
   <div class="gallery">
-      <div class="zone" *ngFor="let zone of zones">
+      <div class="zone" *ngFor="let zone of zones" (click)="openZone(zone)">
           <div class="zone__details">
-            <button href>
               <input type="text" placeholder="Zone {{zone.number}}" />
-            </button>
           </div>
       </div>
   </div>
   <button ion-button (click)="addZone()">Ajouter zone</button>
-  <button href zone.html name="Ajouter page"> </button>
 </ion-content>
