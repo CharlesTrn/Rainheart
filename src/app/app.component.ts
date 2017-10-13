@@ -7,7 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { MeteoPage } from '../pages/meteo/meteo';
 import { OptionsPage } from '../pages/options/options';
-import { ZonePage } from '../pages/zones/zones';
+import { ZonePage } from '../pages/zone/zone';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,7 +28,6 @@ export class MyApp {
       { title: 'Météo', component: MeteoPage },
       { title: 'Options', component: OptionsPage}
     ];
-
   }
 
   initializeApp() {
