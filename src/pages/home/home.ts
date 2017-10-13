@@ -8,7 +8,7 @@ import { MenuController } from 'ionic-angular';
 })
 export class HomePage {
   index: number;
-  zones: Array<{number: number, icon: string}>;
+  zones: Array<{number: number, icon: string, page: any}>;
   constructor(public navCtrl: NavController, private menu: MenuController) {
     this.zones = [];
     this.index = 0;
@@ -26,4 +26,8 @@ export class HomePage {
     });
   }
 
+  openZone() {
+    this.index += 1;
+    this.nav.push(this.component);
+  }
 }
