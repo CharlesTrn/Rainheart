@@ -14,6 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WeatherProvider } from '../providers/weather/weather';
 import { ZoneProvider } from '../providers/zone/zone';
+import { DatabaseProvider } from '../providers/database/database';
 
 
 
@@ -44,7 +45,8 @@ import { ZoneProvider } from '../providers/zone/zone';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     WeatherProvider,
     Geolocation,
-    ZoneProvider
+    ZoneProvider,
+    DatabaseProvider
   ]
 })
 export class AppModule {}
