@@ -11,7 +11,9 @@ export class DatabaseProvider {
   }
 
   getData() {
-    return this.http.get('http://localhost:8100/get_db.php');
-    //.map(res => res.json());
+    return this.http.get('http://localhost/get_db.php')
+    .map(res => {res.json();
+    console.log(res);
+    });
   }
 }

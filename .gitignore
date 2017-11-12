@@ -13,10 +13,13 @@ log.txt
 npm-debug.log*
 
 .idea/
+.sourcemaps/
 .sass-cache/
 .tmp/
 .versions/
 coverage/
+dist/
+node_modules/
 tmp/
 temp/
 hooks/
@@ -24,6 +27,7 @@ platforms/
 plugins/
 plugins/android.json
 plugins/ios.json
+www/
 $RECYCLE.BIN/
 
 .DS_Store

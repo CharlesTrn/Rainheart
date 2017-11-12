@@ -76,7 +76,7 @@ var ZonePage = (function () {
 }());
 ZonePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-zone',template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\pages\zone\zone.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Zone</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="">\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\pages\zone\zone.html"*/
+        selector: 'page-zone',template:/*ion-inline-start:"C:\Users\Tarnier1\Desktop\Rainheart\src\pages\zone\zone.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Zone</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="">\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Desktop\Rainheart\src\pages\zone\zone.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* MenuController */]])
 ], ZonePage);
@@ -177,7 +177,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Accueil</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h3>Météo</h3>\n\n  <div class="meteo">\n\n    \n\n  </div>\n\n  <h3>Zones du jardin</h3>\n\n  <div class="gallery">\n\n      <div class="zone" *ngFor="let zone of zones" (click)="openZone(zone)">\n\n          <div class="zone__details">\n\n              <input type="text" placeholder="Zone {{zone.number}}" />\n\n          </div>\n\n      </div>\n\n  </div>\n\n  <button ion-button (click)="addZone()">Ajouter zone</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\Tarnier1\Desktop\Rainheart\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Accueil</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h3>Météo</h3>\n\n  <div class="meteo">\n\n    \n\n  </div>\n\n  <h3>Zones du jardin</h3>\n\n  <div class="gallery">\n\n      <div class="zone" *ngFor="let zone of zones" (click)="openZone(zone)">\n\n          <div class="zone__details">\n\n              <input type="text" placeholder="Zone {{zone.number}}" />\n\n          </div>\n\n      </div>\n\n  </div>\n\n  <button ion-button (click)="addZone()">Ajouter zone</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Desktop\Rainheart\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__["a" /* WeatherProvider */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__providers_database_database__["a" /* DatabaseProvider */]])
@@ -214,8 +214,11 @@ var DatabaseProvider = (function () {
         console.log('Hello DatabaseProvider Provider');
     }
     DatabaseProvider.prototype.getData = function () {
-        return this.http.get('http://localhost:8100/get_db.php');
-        //.map(res => res.json());
+        return this.http.get('http://localhost/get_db.php')
+            .map(function (res) {
+            res.json();
+            console.log(res);
+        });
     };
     return DatabaseProvider;
 }());
@@ -281,7 +284,7 @@ var MeteoPage = (function () {
 }());
 MeteoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-meteo',template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\pages\meteo\meteo.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Météo</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="meteo">\n\n  <ion-grid *ngIf="weather">\n\n    <ion-row>\n\n      <ion-col width-50 offset-25>\n\n        <h2 class="location">{{weather.name}}</h2>\n\n        <div class="icon">\n\n          <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png">\n\n        </div>\n\n        <h3 class="description">{{weather.weather[0].description}}</h3>\n\n        <h1 class="temp">{{weather.main.temp}}°C</h1>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\pages\meteo\meteo.html"*/
+        selector: 'page-meteo',template:/*ion-inline-start:"C:\Users\Tarnier1\Desktop\Rainheart\src\pages\meteo\meteo.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Météo</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="meteo">\n\n  <ion-grid *ngIf="weather">\n\n    <ion-row>\n\n      <ion-col width-50 offset-25>\n\n        <h2 class="location">{{weather.name}}</h2>\n\n        <div class="icon">\n\n          <img src="http://openweathermap.org/img/w/{{weather.weather[0].icon}}.png">\n\n        </div>\n\n        <h3 class="description">{{weather.weather[0].description}}</h3>\n\n        <h1 class="temp">{{weather.main.temp}}°C</h1>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Desktop\Rainheart\src\pages\meteo\meteo.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__["a" /* WeatherProvider */],
         __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__["a" /* Geolocation */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* MenuController */]])
@@ -322,7 +325,7 @@ var OptionsPage = (function () {
 }());
 OptionsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-options',template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\pages\options\options.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Options</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\pages\options\options.html"*/
+        selector: 'page-options',template:/*ion-inline-start:"C:\Users\Tarnier1\Desktop\Rainheart\src\pages\options\options.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Options</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Desktop\Rainheart\src\pages\options\options.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* MenuController */]])
 ], OptionsPage);
@@ -493,7 +496,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\GitHub\Rainheart\src\app\app.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\Tarnier1\Desktop\Rainheart\src\app\app.html"*/'<ion-menu [content]="content">\n\n  <ion-header>\n\n    <ion-toolbar>\n\n      <ion-title>Menu</ion-title>\n\n    </ion-toolbar>\n\n  </ion-header>\n\n\n\n  <ion-content>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n\n\n</ion-menu>\n\n\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Desktop\Rainheart\src\app\app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
         __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])

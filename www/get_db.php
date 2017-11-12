@@ -1,6 +1,7 @@
 <?php
-  $mysqli = new mysqli("zmmenuisfarainbd.mysql.db", "zmmenuisfarainbd",
-  "Rainheart18", "zmmenuisfarainbd");
+  header('Access http://charles-tarnier.synology.me/~Charles/ -Control-Allow-Origin: *');
+  $mysqli = new mysqli("charles-tarnier.synology.me:3307", "rainheart",
+  "Rainheart18", "rainheart_bd");
   $query = "SELECT * FROM Utilisateur";
   $dbresult = $mysqli->query($query);
 
@@ -19,5 +20,5 @@
       $result = "{'success':false}";
   }
   //echo "K";
-  //echo $result;
+  echo $result;
 ?>
