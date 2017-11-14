@@ -7,8 +7,12 @@ import { HomePage } from '../pages/home/home';
 import { MeteoPage } from '../pages/meteo/meteo';
 import { OptionsPage } from '../pages/options/options';
 import { ZonePage } from '../pages/zone/zone';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { RegisterPage } from '../pages/register/register';
+import { ForgottenPage } from '../pages/forgotten/forgotten';
 import { HttpModule } from '@angular/http';
 import { Geolocation }from '@ionic-native/geolocation';
+import { SignaturePadModule } from 'angular2-signaturepad';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +28,10 @@ import { DatabaseProvider } from '../providers/database/database';
     HomePage,
     MeteoPage,
     OptionsPage,
-    ZonePage
+    ZonePage,
+    WelcomePage,
+    RegisterPage,
+    ForgottenPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,10 @@ import { DatabaseProvider } from '../providers/database/database';
     HomePage,
     MeteoPage,
     OptionsPage,
-    ZonePage
+    ZonePage,
+    WelcomePage,
+    RegisterPage,
+    ForgottenPage
   ],
   providers: [
     StatusBar,

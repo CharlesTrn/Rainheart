@@ -34,8 +34,8 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #99ccff,
+  secondary:  #ffffff,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222
@@ -84,5 +84,37 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
-@import "noto-sans";
+@font-face {
+  font-family: "Rajdhani";
+  font-style: bold;
+  font-weight: normal;
+  src: url("../assets/fonts/Rajdhani-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Rajdhani";
+  font-style: light;
+  font-weight: normal;
+  src: url("../assets/fonts/Rajdhani-Light.ttf");
+}
+
+@font-face {
+  font-family: "Rajdhani";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/Rajdhani-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Rajdhani";
+  font-style: medium;
+  font-weight: normal;
+  src: url("../assets/fonts/Rajdhani-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Rajdhani";
+  font-style: semi-bold;
+  font-weight: normal;
+  src: url("../assets/fonts/Rajdhani-SemiBold.ttf");
+}

@@ -11,9 +11,6 @@ export class DatabaseProvider {
   }
 
   getData() {
-    return this.http.get('http://localhost/get_db.php')
-    .map(res => {res.json();
-    console.log(res);
-    });
+    return this.http.get('http://rainheart.fr:80/php/get_db.php')
   }
 }

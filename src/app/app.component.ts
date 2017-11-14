@@ -2,12 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { SignaturePadModule } from 'angular2-signaturepad';
 
 import { HomePage } from '../pages/home/home';
 import { MeteoPage } from '../pages/meteo/meteo';
 import { OptionsPage } from '../pages/options/options';
 import { ZonePage } from '../pages/zone/zone';
+import { WelcomePage } from '../pages/welcome/welcome';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -15,7 +17,7 @@ import { ZonePage } from '../pages/zone/zone';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = WelcomePage;
 
   pages: Array<{title: string, component: any}>;
 

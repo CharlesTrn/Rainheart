@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Accueil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Météo</h3>
+  <div class="meteo">
+    
+  </div>
+  <h3>Zones du jardin</h3>
+  <div class="gallery">
+      <div class="zone" *ngFor="let zone of zones" (click)="openZone(zone)">
+          <div class="zone__details">
+              <input type="text" placeholder="Zone {{zone.number}}" />
+          </div>
+      </div>
+  </div>
+  <button ion-button (click)="addZone()">Ajouter zone</button>
+</ion-content>

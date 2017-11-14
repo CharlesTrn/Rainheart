@@ -1,0 +1,25 @@
+$font-family-base: "Rajdhani", sans-serif !default;
+
+page-welcome {
+
+#welcome{
+    background: #99CCFF;
+
+    font-family: "Rajdhani";
+    color: white;
+
+    h1{
+        font-size: 52px;
+        margin-top:50px;
+        margin-right: auto;
+        margin-left: auto;
+        width: auto;
+    }
+    .marginTop{
+        margin-top:150px;
+    }
+    .logo{
+        height: 100px;
+    }
+}
+}
