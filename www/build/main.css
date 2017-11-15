@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo");
-@import url("https://fonts.googleapis.com/css?family=Arvo");
-@import url("https://fonts.googleapis.com/css?family=Arvo");
 .ion-ios-add:before {
   content: "\f102";
 }
@@ -25494,6 +25492,137 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-top));
 }
 
+page-forgotten #forgotten {
+  background: #99CCFF;
+  font-family: "Rajdhani";
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+page-forgotten #forgotten h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+page-forgotten #forgotten .conteneur {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 1500px;
+}
+
+page-forgotten #forgotten .plant {
+  height: 120px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  position: relative;
+  bottom: 8%;
+}
+
+page-forgotten #forgotten .drop {
+  height: 50px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  bottom: 7%;
+}
+
+page-forgotten #forgotten .field {
+  background: #99CCFF;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+
+page-forgotten #forgotten .signIn {
+  text-transform: lowercase;
+  text-transform: capitalize;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+page-forgotten #forgotten .signUp {
+  text-transform: lowercase;
+  text-transform: capitalize;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 50px;
+  height: 25px;
+}
+
+page-forgotten #forgotten .forgotPass {
+  text-transform: lowercase;
+  text-transform: capitalize;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 80px;
+  height: 25px;
+}
+
+page-forgotten #forgotten #center {
+  margin: auto;
+}
+
+page-forgotten #forgotten .firstcol {
+  height: 30%;
+}
+
+page-forgotten #forgotten ion-grid {
+  height: 100%;
+  width: 100%;
+}
+
 body,
 html {
   display: -webkit-box;
@@ -25645,306 +25774,81 @@ html {
   color: #444;
 }
 
-body,
-html {
+page-register #register {
+  background: #99CCFF;
+  font-family: "Rajdhani";
+  color: white;
+}
+
+page-register #register .man {
+  height: 80px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #f5f4f4;
-  font-size: 13px;
-  font-family: 'Arvo', monospace;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@supports (display: grid) {
-  body,
-  html {
-    display: block;
-  }
-}
-
-.gallery {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 150px;
-  grid-auto-flow: row dense;
-}
-
-.zone {
-  position: relative;
-  max-width: 500px;
+page-register #register .field {
+  background: #99CCFF;
+  color: white;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background: #0c9a9a;
-  color: #fff;
-  grid-column-start: auto;
-  grid-row-start: auto;
-  color: #fff;
-  background: url("https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
-  background-size: cover;
-  background-position: center;
-  -webkit-box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
-  box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  cursor: pointer;
-  counter-increment: item-counter;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
 }
 
-.zone:nth-of-type(2n) {
-  background-image: url("https://images.unsplash.com/photo-1422255198496-21531f12a6e8?dpr=2&auto=format&fit=crop&w=1500&h=996&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:nth-of-type(3n) {
-  background-image: url("https://images.unsplash.com/photo-1422255198496-21531f12a6e8?dpr=2&auto=format&fit=crop&w=1500&h=996&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:nth-of-type(4n) {
-  background-image: url("https://images.unsplash.com/photo-1490914327627-9fe8d52f4d90?dpr=2&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:nth-of-type(5n) {
-  background-image: url("https://images.unsplash.com/photo-1476097297040-79e9e1603142?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:nth-of-type(6n) {
-  background-image: url("https://images.unsplash.com/photo-1464652149449-f3b8538144aa?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.3;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.zone:hover {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-}
-
-.zone:hover:after {
-  opacity: 0;
-}
-
-.zone--medium {
-  grid-row-end: span 2;
-}
-
-.zone--large {
-  grid-row-end: span 3;
-}
-
-.zone--full {
-  grid-column-end: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .zone--full {
-    grid-column: 1/-1;
-    grid-row-end: span 2;
-  }
-}
-
-.zone__details {
-  position: relative;
-  z-index: 1;
-  padding: 15px;
-  color: #444;
-  background: #fff;
+page-register #register .signIn {
   text-transform: lowercase;
-  letter-spacing: 1px;
-  color: #828282;
-}
-
-.zone__details:before {
-  content: counter(item-counter);
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding-right: 0.5em;
-  color: #444;
-}
-
-body,
-html {
+  text-transform: capitalize;
+  color: white;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #f5f4f4;
-  font-size: 13px;
-  font-family: 'Arvo', monospace;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@supports (display: grid) {
-  body,
-  html {
-    display: block;
-  }
-}
-
-.gallery {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: 150px;
-  grid-auto-flow: row dense;
-}
-
-.zone {
-  position: relative;
-  max-width: 500px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background: #0c9a9a;
-  color: #fff;
-  grid-column-start: auto;
-  grid-row-start: auto;
-  color: #fff;
-  background: url("https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
-  background-size: cover;
-  background-position: center;
-  -webkit-box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
-  box-shadow: -2px 2px 10px 0px rgba(68, 68, 68, 0.4);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  cursor: pointer;
-  counter-increment: item-counter;
-}
-
-.zone:nth-of-type(2n) {
-  background-image: url("https://images.unsplash.com/photo-1422255198496-21531f12a6e8?dpr=2&auto=format&fit=crop&w=1500&h=996&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:nth-of-type(3n) {
-  background-image: url("https://images.unsplash.com/photo-1422255198496-21531f12a6e8?dpr=2&auto=format&fit=crop&w=1500&h=996&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:nth-of-type(4n) {
-  background-image: url("https://images.unsplash.com/photo-1490914327627-9fe8d52f4d90?dpr=2&auto=format&fit=crop&w=1500&h=2250&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:nth-of-type(5n) {
-  background-image: url("https://images.unsplash.com/photo-1476097297040-79e9e1603142?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:nth-of-type(6n) {
-  background-image: url("https://images.unsplash.com/photo-1464652149449-f3b8538144aa?dpr=2&auto=format&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb&crop=");
-}
-
-.zone:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.3;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.zone:hover {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-}
-
-.zone:hover:after {
-  opacity: 0;
-}
-
-.zone--medium {
-  grid-row-end: span 2;
-}
-
-.zone--large {
-  grid-row-end: span 3;
-}
-
-.zone--full {
-  grid-column-end: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .zone--full {
-    grid-column: 1/-1;
-    grid-row-end: span 2;
-  }
-}
-
-.zone__details {
-  position: relative;
-  z-index: 1;
-  padding: 15px;
-  color: #444;
-  background: #fff;
+page-register #register .signUp {
   text-transform: lowercase;
-  letter-spacing: 1px;
-  color: #828282;
+  text-transform: capitalize;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 50px;
+  height: 25px;
 }
 
-.zone__details:before {
-  content: counter(item-counter);
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding-right: 0.5em;
-  color: #444;
+page-register #register .forgotPass {
+  text-transform: lowercase;
+  text-transform: capitalize;
+  color: white;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 80px;
+  height: 25px;
+}
+
+page-register #register #center {
+  margin: auto;
+}
+
+page-register #register .firstcol {
+  height: 30%;
+}
+
+page-register #register ion-grid {
+  height: 100%;
+  width: 100%;
 }
 
 page-welcome #welcome {
@@ -26019,6 +25923,7 @@ page-welcome #welcome .drop {
 
 page-welcome #welcome .field {
   background: #99CCFF;
+  color: white;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26065,8 +25970,7 @@ page-welcome #welcome .forgotPass {
 }
 
 page-welcome #welcome #foot {
-  position: absolute;
-  bottom: 10%;
+  float: left;
 }
 
 page-welcome #welcome #center {

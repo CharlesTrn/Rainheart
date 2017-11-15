@@ -1,46 +1,27 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MenuController } from 'ionic-angular';
-import { WeatherProvider } from "../../providers/weather/weather";
-import { DatabaseProvider } from "../../providers/database/database"
-import { ZonePage } from '../zone/zone';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-register',
-  templateUrl: 'register.html'
+  templateUrl: 'register.html',
 })
 export class RegisterPage {
-  weather:any;
-  data: any;
-  index: number;
-  zones: Array<{number: number, icon: string, page: any}>;
-  constructor(public navCtrl: NavController, private weatherProvider: WeatherProvider,
-  private menu: MenuController, private databaseProvider: DatabaseProvider) {
-    this.zones = [];
-    this.index = 0;
+  responseData : any;
+  userData = {"firstname": "","password": "", "lastname": "","email": "","baseid": ""};
+  constructor(public navCtrl: NavController, public authService:AuthServiceProvider) {
   }
 
-  ionViewDidEnter() {
-    this.menu.swipeEnable(true);
-    this.databaseProvider.getData()
-    .subscribe(data=> {
-      this.data = data;
-      console.log(data);
+  signup(){
+     this.authService.postDat(this.userData,'signup').then((result) => {
+      this.responseData = result;
+      console.log(this.responseData);
+      localStorage.setItem('userData', JSON.stringify(this.responseData));
+      this.navCtrl.push(HomePage);
+    }, (err) => {
+      // Error log
     });
-  }
 
-
-
-  addZone() {
-    this.index += 1;
-    this.zones.push({
-      number: this.index,
-      icon: "",
-      page: ZonePage
-    });
-  }
-
-  openZone(zone) {
-    this.navCtrl.push(zone.page);
   }
 }

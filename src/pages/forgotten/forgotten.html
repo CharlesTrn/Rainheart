@@ -1,24 +1,32 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Accueil</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content padding id="forgotten">
+  <ion-grid fixed>
+    <div id="center">
 
-<ion-content padding>
-  <h3>Météo</h3>
-  <div class="meteo">
-    
-  </div>
-  <h3>Zones du jardin</h3>
-  <div class="gallery">
-      <div class="zone" *ngFor="let zone of zones" (click)="openZone(zone)">
-          <div class="zone__details">
-              <input type="text" placeholder="Zone {{zone.number}}" />
-          </div>
-      </div>
-  </div>
-  <button ion-button (click)="addZone()">Ajouter zone</button>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>Mail</ion-label>
+              <ion-input type="email" placeholder=""></ion-input>
+            </ion-item>
+          </ion-list>
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>Base ID</ion-label>
+              <ion-input type="number" color="primary" placeholder=""></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button color="light" outline="true" round="true"
+          small="true" class="signIn" (click)="home()">
+            Send password
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
 </ion-content>

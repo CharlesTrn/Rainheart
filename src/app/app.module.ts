@@ -14,11 +14,13 @@ import { HttpModule } from '@angular/http';
 import { Geolocation }from '@ionic-native/geolocation';
 import { SignaturePadModule } from 'angular2-signaturepad';
 
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { WeatherProvider } from '../providers/weather/weather';
 import { ZoneProvider } from '../providers/zone/zone';
 import { DatabaseProvider } from '../providers/database/database';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 
 
@@ -56,7 +58,8 @@ import { DatabaseProvider } from '../providers/database/database';
     WeatherProvider,
     Geolocation,
     ZoneProvider,
-    DatabaseProvider
+    DatabaseProvider,
+    AuthServiceProvider
   ]
 })
 export class AppModule {}

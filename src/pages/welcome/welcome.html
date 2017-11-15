@@ -2,6 +2,7 @@
   <ion-grid fixed>
     <div id="center">
       <ion-row>
+
         <ion-col>
           <h1>RainHeart</h1>
           <img center text-center src="assets/icon/drop.png" class="drop"/>
@@ -29,7 +30,7 @@
       <ion-row>
         <ion-col>
           <button ion-button color="light" outline="true" round="true"
-          small="true" class="signIn">
+          small="true" class="signIn" (click)="home()">
             Sign in
           </button>
         </ion-col>
@@ -39,19 +40,15 @@
     <ion-row id="foot">
       <ion-col>
         <button ion-button color="light" outline="true" round="true"
-        small="true" class="signUp">
+        small="true" class="signUp" (click)="register()">
           Sign up
         </button>
         <button ion-button color="light" outline="true" round="true"
-        small="true" class="forgotPass">
+        small="true" class="forgotPass" (click)="forgot()">
           Forgot password?
         </button>
       </ion-col>
+
     </ion-row>
-
-
   </ion-grid>
-
-
-
 </ion-content>

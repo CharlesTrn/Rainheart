@@ -1,1 +1,65 @@
+<ion-content padding id="register">
+  <ion-grid fixed>
+    <div id="center">
 
+      <ion-row>
+        <ion-col>
+
+          <img center text-center src="assets/icon/man.png" class="man"/>
+
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>First name</ion-label>
+              <ion-input type="text" placeholder="" [(ngModel)]="userData.firstname"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>Last name</ion-label>
+              <ion-input type="text" placeholder="" [(ngModel)]="userData.lastname"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>Mail</ion-label>
+              <ion-input type="email" placeholder="" [(ngModel)]="userData.email"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>Password</ion-label>
+              <ion-input type="password" color="primary" placeholder="" [(ngModel)]="userData.password"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>Location</ion-label>
+              <ion-input type="text" placeholder=""></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>Base ID</ion-label>
+              <ion-input type="number" placeholder="" [(ngModel)]="userData.baseid"></ion-input>
+            </ion-item>
+          </ion-list>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button color="light" outline="true" round="true"
+          small="true" class="signIn" (click)="signup()">
+            OK
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>

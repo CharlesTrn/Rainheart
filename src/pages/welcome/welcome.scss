@@ -43,6 +43,7 @@ page-welcome {
 
     .field{
       background: #99CCFF;
+      color: white;
       display: flex;
       margin-left: auto;
       margin-right: auto;
@@ -77,8 +78,7 @@ page-welcome {
     }
 
     #foot{
-      position: absolute;
-      bottom: 10%;
+      float: left;
     }
 
     #center{
