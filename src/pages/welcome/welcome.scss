@@ -4,22 +4,95 @@ page-welcome {
 
 #welcome{
     background: #99CCFF;
-
     font-family: "Rajdhani";
     color: white;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     h1{
-        font-size: 52px;
-        margin-top:50px;
-        margin-right: auto;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .conteneur{
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      height: 1500px;
+    }
+
+    .plant{
+        height: 120px;
+        display: flex;
         margin-left: auto;
-        width: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        position:relative;
+        bottom: 8%;
     }
-    .marginTop{
-        margin-top:150px;
+
+    .drop{
+      height: 50px;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      position:relative;
+      bottom: 7%;
     }
-    .logo{
-        height: 100px;
+
+    .field{
+      background: #99CCFF;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      width: 200px;
     }
-}
+
+    .signIn{
+      text-transform:lowercase;
+      text-transform: capitalize;
+      color: white;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .signUp{
+      text-transform:lowercase;
+      text-transform: capitalize;
+      color: white;
+      display: flex;
+      min-width: 50px;
+      height: 25px;
+    }
+
+    .forgotPass{
+      text-transform:lowercase;
+      text-transform: capitalize;
+      color: white;
+      display: flex;
+      min-width: 80px;
+      height: 25px;
+    }
+
+    #foot{
+      position: absolute;
+      bottom: 10%;
+    }
+
+    #center{
+      margin: auto;
+    }
+
+    .firstcol{
+      height: 30%;
+    }
+
+    ion-grid {
+      height: 100%;
+      width: 100%;
+    }
+
+  }
 }

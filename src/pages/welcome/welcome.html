@@ -1,17 +1,57 @@
 <ion-content padding id="welcome">
-  <h1>RainHeart</h1>
-  <img src="assets/icon/logo.png" class="logo"/>
+  <ion-grid fixed>
+    <div id="center">
+      <ion-row>
+        <ion-col>
+          <h1>RainHeart</h1>
+          <img center text-center src="assets/icon/drop.png" class="drop"/>
+          <img center src="assets/icon/plant.png" class="plant"/>
+        </ion-col>
+      </ion-row>
 
-  <ion-grid >
-    <ion-row>
-      <ion-col center text-center>
-        <button ion-button full color="success" (click)="signup()">Sign up</button>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>Mail</ion-label>
+              <ion-input type="email" placeholder=""></ion-input>
+            </ion-item>
+          </ion-list>
+          <ion-list>
+            <ion-item class="field">
+              <ion-label color="primary" stacked>Password</ion-label>
+              <ion-input type="password" color="primary" placeholder=""></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button color="light" outline="true" round="true"
+          small="true" class="signIn">
+            Sign in
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <ion-row id="foot">
+      <ion-col>
+        <button ion-button color="light" outline="true" round="true"
+        small="true" class="signUp">
+          Sign up
+        </button>
+        <button ion-button color="light" outline="true" round="true"
+        small="true" class="forgotPass">
+          Forgot password?
+        </button>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col center text-center>
-        <button ion-button full color="lightText" (click)="login()">Log in</button>
-      </ion-col>
-    </ion-row>
+
+
   </ion-grid>
+
+
+
 </ion-content>
