@@ -9,6 +9,7 @@ import { OptionsPage } from '../pages/options/options';
 import { ZonePage } from '../pages/zone/zone';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RegisterPage } from '../pages/register/register';
+import { AutocompletePage } from '../pages/register/autocomplete';
 import { ForgottenPage } from '../pages/forgotten/forgotten';
 import { HttpModule } from '@angular/http';
 import { Geolocation }from '@ionic-native/geolocation';
@@ -33,7 +34,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     ZonePage,
     WelcomePage,
     RegisterPage,
-    ForgottenPage
+    ForgottenPage,
+    AutocompletePage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     ZonePage,
     WelcomePage,
     RegisterPage,
-    ForgottenPage
+    ForgottenPage,
+    AutocompletePage
   ],
   providers: [
     StatusBar,

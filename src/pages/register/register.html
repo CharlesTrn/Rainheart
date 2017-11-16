@@ -30,6 +30,13 @@
 
           <ion-list>
             <ion-item class="field">
+              <ion-label color="primary" stacked>Phone number</ion-label>
+              <ion-input type="telephone" placeholder="" [(ngModel)]="userData.phone"></ion-input>
+            </ion-item>
+          </ion-list>
+
+          <ion-list>
+            <ion-item class="field">
               <ion-label color="primary" stacked>Password</ion-label>
               <ion-input type="password" color="primary" placeholder="" [(ngModel)]="userData.password"></ion-input>
             </ion-item>
@@ -38,7 +45,7 @@
           <ion-list>
             <ion-item class="field">
               <ion-label color="primary" stacked>Location</ion-label>
-              <ion-input type="text" placeholder=""></ion-input>
+              <ion-input type="text" placeholder="" (click)="showAddressModal()" [(ngModel)]="address"></ion-input>
             </ion-item>
           </ion-list>
 

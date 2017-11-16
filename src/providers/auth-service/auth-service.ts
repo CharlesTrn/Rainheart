@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-let apiUrl = 'http://rainheart.fr/api/Slim';
+let apiUrl = 'http://rainheart.fr:80/api/';
 
 @Injectable()
 export class AuthServiceProvider {
