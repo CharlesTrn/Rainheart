@@ -9,7 +9,8 @@ import {ViewController} from 'ionic-angular';
 export class AutocompletePage {
   autocompleteItems;
   autocomplete;
-  service = new google.maps.places.Autocomplete();
+  google: any;
+  service = new google.maps.places.AutocompleteService();
 
   constructor (public viewCtrl: ViewController, private zone: NgZone) {
     this.autocompleteItems = [];
@@ -32,7 +33,7 @@ export class AutocompletePage {
       return;
     }
     let me = this;
-    this.service.getPlace({ input: this.autocomplete.query, componentRestrictions: {} }, function (predictions, status) {
+    this.service.getPlacePredictions({ input: this.autocomplete.query, componentRestrictions: {} }, function (predictions, status) {
       me.autocompleteItems = [];
       me.zone.run(function () {
         predictions.forEach(function (prediction) {

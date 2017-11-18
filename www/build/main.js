@@ -363,8 +363,7 @@ DatabaseProvider = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_auth_service__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__autocomplete__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__autocomplete__ = __webpack_require__(206);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -378,32 +377,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var RegisterPage = (function () {
     function RegisterPage(navCtrl, authService, modalCtrl) {
         this.navCtrl = navCtrl;
         this.authService = authService;
         this.modalCtrl = modalCtrl;
-        this.userData = { "firstname": "", "password": "", "lastname": "", "email": "",
-            "baseid": "", "numRue": "", "nomRue": "", "ville": "", "codePost": "",
-            "pays": "", "phone": ""
+        this.userData = { "firstname": "blabla", "password": "aza", "lastname": "azea", "email": "azeaz@gmail.com",
+            "baseid": "213215", "numRue": "11", "nomRue": "eaze", "ville": "zerze", "codePost": "82600",
+            "pays": "ezea", "phone": "0601020304"
         };
     }
     RegisterPage.prototype.signup = function () {
-        var _this = this;
-        console.log(JSON.stringify(this.address));
-        this.authService.postDat(this.userData, 'signup').then(function (result) {
-            _this.responseData = result;
-            console.log(_this.responseData);
-            localStorage.setItem('userData', JSON.stringify(_this.responseData));
-            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */]);
-        }, function (err) {
-            // Error log
-        });
+        this.authService.postDat(this.userData); /*.then((result) => {
+        this.responseData = result;
+        console.log(this.responseData);
+        localStorage.setItem('userData', JSON.stringify(this.responseData));
+        this.navCtrl.push(HomePage);
+      }, (err) => {
+        // Error log
+      });*/
     };
     RegisterPage.prototype.showAddressModal = function () {
         var _this = this;
-        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__autocomplete__["a" /* AutocompletePage */]);
+        var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__autocomplete__["a" /* AutocompletePage */]);
         var me = this;
         modal.onDidDismiss(function (data) {
             _this.address = data;
@@ -446,31 +442,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var apiUrl = 'http://rainheart.fr:80/api/';
+var apiUrl = 'http://rainheart.fr:80/php/signup.php';
 var AuthServiceProvider = (function () {
     function AuthServiceProvider(http) {
         this.http = http;
         console.log('Hello AuthServiceProvider Provider');
     }
-    AuthServiceProvider.prototype.postDat = function (credentials, type) {
-        var _this = this;
-        return new Promise(function (resolve, reject) {
-            var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-            _this.http.post(apiUrl + type, JSON.stringify(credentials), { headers: headers })
-                .subscribe(function (res) {
-                resolve(res.json());
-            }, function (err) {
-                reject(err);
-            });
-        });
+    AuthServiceProvider.prototype.postDat = function (data) {
+        //return new Promise((resolve, reject) => {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json');
+        this.http.post(apiUrl, { ln: data.lastname, fn: data.firstname,
+            ps: data.password, ph: data.phone, stn: data.numRue, st: data.nomRue,
+            c: data.ville, p: data.pays, bid: data.baseid, z: data.codePost,
+            m: data.email }, { headers: headers });
+        /*.subscribe(res => {
+          resolve(res.json());
+        }, (err) => {
+          reject(err);
+        });*/
     };
     return AuthServiceProvider;
 }());
 AuthServiceProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], AuthServiceProvider);
 
+var _a;
 //# sourceMappingURL=auth-service.js.map
 
 /***/ }),
@@ -479,9 +479,71 @@ AuthServiceProvider = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AutocompletePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AutocompletePage = (function () {
+    function AutocompletePage(viewCtrl, zone) {
+        this.viewCtrl = viewCtrl;
+        this.zone = zone;
+        this.service = new google.maps.places.AutocompleteService();
+        this.autocompleteItems = [];
+        this.autocomplete = {
+            query: ''
+        };
+    }
+    AutocompletePage.prototype.dismiss = function () {
+        this.viewCtrl.dismiss();
+    };
+    AutocompletePage.prototype.chooseItem = function (item) {
+        this.viewCtrl.dismiss(item);
+    };
+    AutocompletePage.prototype.updateSearch = function () {
+        if (this.autocomplete.query == '') {
+            this.autocompleteItems = [];
+            return;
+        }
+        var me = this;
+        this.service.getPlacePredictions({ input: this.autocomplete.query, componentRestrictions: {} }, function (predictions, status) {
+            me.autocompleteItems = [];
+            me.zone.run(function () {
+                predictions.forEach(function (prediction) {
+                    me.autocompleteItems.push(prediction.description);
+                });
+            });
+        });
+    };
+    return AutocompletePage;
+}());
+AutocompletePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-autocomplete',template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\register\autocomplete.html"*/'<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>Enter address</ion-title>\n\n    <ion-searchbar [(ngModel)]="autocomplete.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>\n\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">\n\n      {{ item }}\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\register\autocomplete.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]])
+], AutocompletePage);
+
+//# sourceMappingURL=autocomplete.js.map
+
+/***/ }),
+
+/***/ 207:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(226);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -489,7 +551,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -497,14 +559,14 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(266);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_meteo_meteo__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_options_options__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_zone_zone__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_welcome_welcome__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_register_register__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_register_autocomplete__ = __webpack_require__(274);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_register_autocomplete__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_forgotten_forgotten__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_http__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_geolocation__ = __webpack_require__(199);
@@ -594,7 +656,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 265:
+/***/ 266:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -663,69 +725,6 @@ MyApp = __decorate([
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 274:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AutocompletePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var AutocompletePage = (function () {
-    function AutocompletePage(viewCtrl, zone) {
-        this.viewCtrl = viewCtrl;
-        this.zone = zone;
-        this.service = new google.maps.places.Autocomplete();
-        this.autocompleteItems = [];
-        this.autocomplete = {
-            query: ''
-        };
-    }
-    AutocompletePage.prototype.dismiss = function () {
-        this.viewCtrl.dismiss();
-    };
-    AutocompletePage.prototype.chooseItem = function (item) {
-        this.viewCtrl.dismiss(item);
-    };
-    AutocompletePage.prototype.updateSearch = function () {
-        if (this.autocomplete.query == '') {
-            this.autocompleteItems = [];
-            return;
-        }
-        var me = this;
-        this.service.getPlace({ input: this.autocomplete.query, componentRestrictions: {} }, function (predictions, status) {
-            me.autocompleteItems = [];
-            me.zone.run(function () {
-                predictions.forEach(function (prediction) {
-                    me.autocompleteItems.push(prediction.description);
-                });
-            });
-        });
-    };
-    return AutocompletePage;
-}());
-AutocompletePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-autocomplete',template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\register\autocomplete.html"*/'<ion-header>\n\n  <ion-toolbar>\n\n    <ion-title>Enter address</ion-title>\n\n    <ion-searchbar [(ngModel)]="autocomplete.query" [showCancelButton]="true" (ionInput)="updateSearch()" (ionCancel)="dismiss()"></ion-searchbar>\n\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">\n\n      {{ item }}\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\register\autocomplete.html"*/,
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ViewController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* NgZone */]) === "function" && _b || Object])
-], AutocompletePage);
-
-var _a, _b;
-//# sourceMappingURL=autocomplete.js.map
 
 /***/ }),
 
@@ -852,5 +851,5 @@ HomePage = __decorate([
 
 /***/ })
 
-},[206]);
+},[207]);
 //# sourceMappingURL=main.js.map
