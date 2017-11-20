@@ -10,7 +10,7 @@ export class AutocompletePage {
   autocompleteItems;
   autocomplete;
   google: any;
-  service = new google.maps.places.AutocompleteService();
+  service = new this.google.maps.places.AutocompleteService();
 
   constructor (public viewCtrl: ViewController, private zone: NgZone) {
     this.autocompleteItems = [];

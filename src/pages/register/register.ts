@@ -20,7 +20,8 @@ export class RegisterPage {
   }
 
   signup(){
-      this.authService.postDat(this.userData);/*.then((result) => {
+      this.authService.postDat(this.userData);
+      console.log(this.userData);/*.then((result) => {
       this.responseData = result;
       console.log(this.responseData);
       localStorage.setItem('userData', JSON.stringify(this.responseData));

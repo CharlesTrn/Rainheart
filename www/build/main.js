@@ -1,13 +1,13 @@
 webpackJsonp([0],{
 
-/***/ 103:
+/***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WeatherProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -42,6 +42,74 @@ WeatherProvider = __decorate([
 ], WeatherProvider);
 
 //# sourceMappingURL=weather.js.map
+
+/***/ }),
+
+/***/ 103:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_database_database__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__zone_zone__ = __webpack_require__(104);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HomePage = (function () {
+    function HomePage(navCtrl, weatherProvider, menu, databaseProvider) {
+        this.navCtrl = navCtrl;
+        this.weatherProvider = weatherProvider;
+        this.menu = menu;
+        this.databaseProvider = databaseProvider;
+        this.zones = [];
+        this.index = 0;
+    }
+    HomePage.prototype.ionViewDidEnter = function () {
+        var _this = this;
+        this.menu.swipeEnable(true);
+        this.databaseProvider.getData()
+            .subscribe(function (data) {
+            _this.data = data;
+            console.log(data);
+        });
+    };
+    HomePage.prototype.addZone = function () {
+        this.index += 1;
+        this.zones.push({
+            number: this.index,
+            icon: "",
+            page: __WEBPACK_IMPORTED_MODULE_4__zone_zone__["a" /* ZonePage */]
+        });
+    };
+    HomePage.prototype.openZone = function (zone) {
+        this.navCtrl.push(zone.page);
+    };
+    return HomePage;
+}());
+HomePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Accueil</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h3>Météo</h3>\n\n  <div class="meteo">\n\n    \n\n  </div>\n\n  <h3>Zones du jardin</h3>\n\n  <div class="gallery">\n\n      <div class="zone" *ngFor="let zone of zones" (click)="openZone(zone)">\n\n          <div class="zone__details">\n\n              <input type="text" placeholder="Zone {{zone.number}}" />\n\n          </div>\n\n      </div>\n\n  </div>\n\n  <button ion-button (click)="addZone()">Ajouter zone</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\home\home.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__["a" /* WeatherProvider */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__providers_database_database__["a" /* DatabaseProvider */]])
+], HomePage);
+
+//# sourceMappingURL=home.js.map
 
 /***/ }),
 
@@ -126,7 +194,7 @@ webpackEmptyAsyncContext.id = 155;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MeteoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_geolocation__ = __webpack_require__(199);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -231,7 +299,7 @@ OptionsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__forgotten_forgotten__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -282,7 +350,7 @@ WelcomePage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgottenPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(103);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -322,7 +390,7 @@ ForgottenPage = __decorate([
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatabaseProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -388,7 +456,8 @@ var RegisterPage = (function () {
         };
     }
     RegisterPage.prototype.signup = function () {
-        this.authService.postDat(this.userData); /*.then((result) => {
+        this.authService.postDat(this.userData);
+        console.log(this.userData); /*.then((result) => {
         this.responseData = result;
         console.log(this.responseData);
         localStorage.setItem('userData', JSON.stringify(this.responseData));
@@ -413,10 +482,9 @@ RegisterPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-register',template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\register\register.html"*/'<ion-content padding id="register">\n\n  <ion-grid fixed>\n\n    <div id="center">\n\n\n\n      <ion-row>\n\n        <ion-col>\n\n\n\n          <img center text-center src="assets/icon/man.png" class="man"/>\n\n\n\n          <ion-list>\n\n            <ion-item class="field">\n\n              <ion-label color="primary" stacked>First name</ion-label>\n\n              <ion-input type="text" placeholder="" [(ngModel)]="userData.firstname"></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n\n\n          <ion-list>\n\n            <ion-item class="field">\n\n              <ion-label color="primary" stacked>Last name</ion-label>\n\n              <ion-input type="text" placeholder="" [(ngModel)]="userData.lastname"></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n\n\n          <ion-list>\n\n            <ion-item class="field">\n\n              <ion-label color="primary" stacked>Mail</ion-label>\n\n              <ion-input type="email" placeholder="" [(ngModel)]="userData.email"></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n\n\n          <ion-list>\n\n            <ion-item class="field">\n\n              <ion-label color="primary" stacked>Phone number</ion-label>\n\n              <ion-input type="telephone" placeholder="" [(ngModel)]="userData.phone"></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n\n\n          <ion-list>\n\n            <ion-item class="field">\n\n              <ion-label color="primary" stacked>Password</ion-label>\n\n              <ion-input type="password" color="primary" placeholder="" [(ngModel)]="userData.password"></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n\n\n          <ion-list>\n\n            <ion-item class="field">\n\n              <ion-label color="primary" stacked>Location</ion-label>\n\n              <ion-input type="text" placeholder="" (click)="showAddressModal()" [(ngModel)]="address"></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n\n\n          <ion-list>\n\n            <ion-item class="field">\n\n              <ion-label color="primary" stacked>Base ID</ion-label>\n\n              <ion-input type="number" placeholder="" [(ngModel)]="userData.baseid"></ion-input>\n\n            </ion-item>\n\n          </ion-list>\n\n\n\n        </ion-col>\n\n      </ion-row>\n\n\n\n      <ion-row>\n\n        <ion-col>\n\n          <button ion-button color="light" outline="true" round="true"\n\n          small="true" class="signIn" (click)="signup()">\n\n            OK\n\n          </button>\n\n        </ion-col>\n\n      </ion-row>\n\n    </div>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\register\register.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_auth_service__["a" /* AuthServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_auth_service__["a" /* AuthServiceProvider */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_auth_service_auth_service__["a" /* AuthServiceProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ModalController */]])
 ], RegisterPage);
 
-var _a, _b, _c;
 //# sourceMappingURL=register.js.map
 
 /***/ }),
@@ -428,8 +496,12 @@ var _a, _b, _c;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthServiceProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__ = __webpack_require__(277);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_toPromise__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -442,26 +514,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var apiUrl = 'http://rainheart.fr:80/php/signup.php';
 var AuthServiceProvider = (function () {
     function AuthServiceProvider(http) {
         this.http = http;
+        this.mydata = {};
         console.log('Hello AuthServiceProvider Provider');
+        this.mydata.response = '';
     }
     AuthServiceProvider.prototype.postDat = function (data) {
-        //return new Promise((resolve, reject) => {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
-        headers.append("Accept", 'application/json');
-        headers.append('Content-Type', 'application/json');
-        this.http.post(apiUrl, { ln: data.lastname, fn: data.firstname,
+        var _this = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({
+            'Content-Type': 'application/json'
+        });
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        data = JSON.stringify({
+            ln: data.lastname, fn: data.firstname,
             ps: data.password, ph: data.phone, stn: data.numRue, st: data.nomRue,
             c: data.ville, p: data.pays, bid: data.baseid, z: data.codePost,
-            m: data.email }, { headers: headers });
-        /*.subscribe(res => {
-          resolve(res.json());
-        }, (err) => {
-          reject(err);
-        });*/
+            m: data.email
+        });
+        this.http.post(apiUrl, data)
+            .subscribe(function (mydata) {
+            _this.mydata.response = mydata["_body"];
+            console.log(_this.mydata);
+        }, function (error) {
+            console.log("Oooops!");
+        });
     };
     return AuthServiceProvider;
 }());
@@ -497,7 +578,7 @@ var AutocompletePage = (function () {
     function AutocompletePage(viewCtrl, zone) {
         this.viewCtrl = viewCtrl;
         this.zone = zone;
-        this.service = new google.maps.places.AutocompleteService();
+        this.service = new this.google.maps.places.AutocompleteService();
         this.autocompleteItems = [];
         this.autocomplete = {
             query: ''
@@ -556,11 +637,11 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_meteo_meteo__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_options_options__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_zone_zone__ = __webpack_require__(104);
@@ -572,8 +653,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_native_geolocation__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_weather_weather__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_zone_zone__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_weather_weather__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__providers_zone_zone__ = __webpack_require__(279);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_database_database__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_auth_service_auth_service__ = __webpack_require__(205);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -728,14 +809,14 @@ MyApp = __decorate([
 
 /***/ }),
 
-/***/ 275:
+/***/ 279:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ZoneProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_zone_zone__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -780,74 +861,6 @@ ZoneProvider = __decorate([
 ], ZoneProvider);
 
 //# sourceMappingURL=zone.js.map
-
-/***/ }),
-
-/***/ 52:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_database_database__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__zone_zone__ = __webpack_require__(104);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var HomePage = (function () {
-    function HomePage(navCtrl, weatherProvider, menu, databaseProvider) {
-        this.navCtrl = navCtrl;
-        this.weatherProvider = weatherProvider;
-        this.menu = menu;
-        this.databaseProvider = databaseProvider;
-        this.zones = [];
-        this.index = 0;
-    }
-    HomePage.prototype.ionViewDidEnter = function () {
-        var _this = this;
-        this.menu.swipeEnable(true);
-        this.databaseProvider.getData()
-            .subscribe(function (data) {
-            _this.data = data;
-            console.log(data);
-        });
-    };
-    HomePage.prototype.addZone = function () {
-        this.index += 1;
-        this.zones.push({
-            number: this.index,
-            icon: "",
-            page: __WEBPACK_IMPORTED_MODULE_4__zone_zone__["a" /* ZonePage */]
-        });
-    };
-    HomePage.prototype.openZone = function (zone) {
-        this.navCtrl.push(zone.page);
-    };
-    return HomePage;
-}());
-HomePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Accueil</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <h3>Météo</h3>\n\n  <div class="meteo">\n\n    \n\n  </div>\n\n  <h3>Zones du jardin</h3>\n\n  <div class="gallery">\n\n      <div class="zone" *ngFor="let zone of zones" (click)="openZone(zone)">\n\n          <div class="zone__details">\n\n              <input type="text" placeholder="Zone {{zone.number}}" />\n\n          </div>\n\n      </div>\n\n  </div>\n\n  <button ion-button (click)="addZone()">Ajouter zone</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Tarnier1\Documents\Github\Rainheart\src\pages\home\home.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_weather_weather__["a" /* WeatherProvider */],
-        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* MenuController */], __WEBPACK_IMPORTED_MODULE_3__providers_database_database__["a" /* DatabaseProvider */]])
-], HomePage);
-
-//# sourceMappingURL=home.js.map
 
 /***/ })
 
