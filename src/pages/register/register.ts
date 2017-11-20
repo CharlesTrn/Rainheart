@@ -10,9 +10,9 @@ import {AutocompletePage} from './autocomplete';
 })
 export class RegisterPage {
   responseData : any;
-  userData = {"firstname": "blabla","password": "aza", "lastname": "azea","email": "azeaz@gmail.com",
-  "baseid": "213215", "numRue": "11", "nomRue": "eaze", "ville": "zerze", "codePost": "82600",
-  "pays": "ezea", "phone": "0601020304"
+  userData = {"firstname": "","password": "", "lastname": "","email": "",
+  "baseid": "", "numRue": "11", "nomRue": "eaze", "ville": "zerze", "codePost": "82600",
+  "pays": "eezrz", "phone": ""
   };
   address: any;
   constructor(public navCtrl: NavController, public authService:AuthServiceProvider, private modalCtrl: ModalController) {
@@ -20,16 +20,8 @@ export class RegisterPage {
   }
 
   signup(){
-      this.authService.postDat(this.userData);
-      console.log(this.userData);/*.then((result) => {
-      this.responseData = result;
-      console.log(this.responseData);
-      localStorage.setItem('userData', JSON.stringify(this.responseData));
-      this.navCtrl.push(HomePage);
-    }, (err) => {
-      // Error log
-    });*/
-
+      this.authService.postDat(this.userData, "signup");
+      console.log(this.userData);
   }
 
   showAddressModal () {

@@ -22,11 +22,11 @@ export class HomePage {
 
   ionViewDidEnter() {
     this.menu.swipeEnable(true);
-    this.databaseProvider.getData()
+    /*this.databaseProvider.getData()
     .subscribe(data=> {
       this.data = data;
       console.log(data);
-    });
+    });*/
   }
 
 

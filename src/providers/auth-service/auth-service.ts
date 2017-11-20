@@ -4,7 +4,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
-let apiUrl = 'http://rainheart.fr:80/php/signup.php';
+let apiUrl = 'http://rainheart.fr:80/php/';
 
 @Injectable()
 export class AuthServiceProvider {
@@ -16,7 +16,7 @@ export class AuthServiceProvider {
   }
 
 
-  postDat(data) {
+  postDat(data, type) {
 
     let headers = new Headers(
     {
@@ -31,10 +31,10 @@ export class AuthServiceProvider {
       m: data.email
     });
 
-    this.http.post(apiUrl, data)
+    this.http.post(apiUrl + type + ".php", data)
     .subscribe(mydata => {
     this.mydata.response = mydata["_body"];
-    console.log(this.mydata); 
+    console.log(this.mydata);
     }, error => {
     console.log("Oooops!");
     });

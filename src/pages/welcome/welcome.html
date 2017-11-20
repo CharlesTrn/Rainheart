@@ -15,13 +15,13 @@
           <ion-list>
             <ion-item class="field">
               <ion-label color="primary" stacked>Mail</ion-label>
-              <ion-input type="email" placeholder=""></ion-input>
+              <ion-input type="email" placeholder="" [(ngModel)]="userData.email"></ion-input>
             </ion-item>
           </ion-list>
           <ion-list>
             <ion-item class="field">
               <ion-label color="primary" stacked>Password</ion-label>
-              <ion-input type="password" color="primary" placeholder=""></ion-input>
+              <ion-input type="password" color="primary" placeholder="" [(ngModel)]="userData.password"></ion-input>
             </ion-item>
           </ion-list>
         </ion-col>
@@ -30,7 +30,7 @@
       <ion-row>
         <ion-col>
           <button ion-button color="light" outline="true" round="true"
-          small="true" class="signIn" (click)="home()">
+          small="true" class="signIn" (click)="signin()">
             Sign in
           </button>
         </ion-col>

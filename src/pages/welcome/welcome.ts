@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ForgottenPage } from '../forgotten/forgotten';
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
@@ -10,7 +11,10 @@ import { HomePage } from '../home/home';
   templateUrl: 'welcome.html',
 })
 export class WelcomePage {
-  constructor(public navCtrl: NavController, private menu: MenuController) {
+  userData = {"password": "", "email": ""
+  };
+  constructor(public navCtrl: NavController, public authService:AuthServiceProvider,
+    private menu: MenuController) {
     this.menu.swipeEnable(false);
   }
 
@@ -24,5 +28,11 @@ export class WelcomePage {
 
   home(){
     this.navCtrl.push(HomePage);
+  }
+
+  signin() {
+    this.authService.postDat(this.userData, "signin");
+    console.log(this.userData);
+    this.home();
   }
 }
