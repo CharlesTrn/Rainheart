@@ -2,7 +2,6 @@
   <ion-grid fixed>
     <div id="center">
       <ion-row>
-
         <ion-col>
           <h1>RainHeart</h1>
           <img center text-center src="assets/icon/drop.png" class="drop"/>
@@ -10,6 +9,12 @@
         </ion-col>
       </ion-row>
 
+      <div class="wrongFill">
+        <span *ngIf="invalidMail">No user found with this mail</span>
+        <span *ngIf="invalidPassword">Wrong password</span>
+        <span *ngIf="emptyParameter">Make sure you filled all fields</span>
+      </div>
+      
       <ion-row>
         <ion-col>
           <ion-list>

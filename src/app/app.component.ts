@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { SignaturePadModule } from 'angular2-signaturepad';
+
 
 import { HomePage } from '../pages/home/home';
 import { MeteoPage } from '../pages/meteo/meteo';

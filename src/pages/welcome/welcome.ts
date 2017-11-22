@@ -13,9 +13,16 @@ import { HomePage } from '../home/home';
 export class WelcomePage {
   userData = {"password": "", "email": ""
   };
+  invalidPassword: boolean;
+  invalidMail: boolean;
+  emptyParameter: boolean;
+
   constructor(public navCtrl: NavController, public authService:AuthServiceProvider,
     private menu: MenuController) {
     this.menu.swipeEnable(false);
+    this.invalidMail = false;
+    this.invalidPassword = false;
+    this.emptyParameter = false;
   }
 
   register(){
@@ -31,8 +38,25 @@ export class WelcomePage {
   }
 
   signin() {
-    this.authService.postDat(this.userData, "signin");
-    console.log(this.userData);
-    this.home();
+    this.invalidMail = false;
+    this.invalidPassword = false;
+    this.emptyParameter = false;
+    let res = this.authService.postDat(this.userData, "signin");
+    console.log(res);
+    if(res == "User accepted!") {
+        this.home();
+    }
+
+    else if(res == "Wrong password!") {
+      this.invalidPassword = true;
+    }
+
+    else if(res == "No such mail!") {
+      this.invalidMail = true;
+    }
+
+    else if(res == "Empty parameter!") {
+      this.emptyParameter = true;
+    }
   }
 }

@@ -21,7 +21,7 @@ page-register {
       display: flex;
       margin-left: auto;
       margin-right: auto;
-      width: 200px;
+      width: 300px;
     }
 
     .signIn{
@@ -54,6 +54,10 @@ page-register {
 
     #center{
       margin: auto;
+    }
+
+    #autocomplete{
+      width: 99%;
     }
 
     .firstcol{

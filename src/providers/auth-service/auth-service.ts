@@ -34,12 +34,12 @@ export class AuthServiceProvider {
     this.http.post(apiUrl + type + ".php", data)
     .subscribe(mydata => {
     this.mydata.response = mydata["_body"];
-    console.log(this.mydata);
+
     }, error => {
     console.log("Oooops!");
     });
 
-
-    }
-
+    return this.mydata.response;
   }
+
+}
