@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage,NavController } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 import { WeatherProvider } from "../../providers/weather/weather";
 import { DatabaseProvider } from "../../providers/database/database"
 import { ZonePage } from '../zone/zone';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

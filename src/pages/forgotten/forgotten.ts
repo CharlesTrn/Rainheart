@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage,NavController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
+@IonicPage({
+    defaultHistory: ['WelcomePage']
+})
 @Component({
   selector: 'page-forgotten',
   templateUrl: 'forgotten.html',
@@ -11,6 +14,6 @@ export class ForgottenPage {
   }
 
   home(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push('HomePage');
   }
 }

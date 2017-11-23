@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import {NavController, ModalController} from 'ionic-angular';
+import {IonicPage,NavController, ModalController} from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { HomePage } from '../home/home';
 declare var google;
 
-
+@IonicPage({
+    defaultHistory: ['WelcomePage']
+})
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',

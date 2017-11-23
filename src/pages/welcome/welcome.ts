@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage,NavController } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ForgottenPage } from '../forgotten/forgotten';
 import { RegisterPage } from '../register/register';
 import { HomePage } from '../home/home';
 
+@IonicPage()
 @Component({
   selector: 'page-welcome',
   templateUrl: 'welcome.html',
@@ -26,15 +27,15 @@ export class WelcomePage {
   }
 
   register(){
-    this.navCtrl.push(RegisterPage);
+    this.navCtrl.push('RegisterPage');
   }
 
   forgot(){
-    this.navCtrl.push(ForgottenPage);
+    this.navCtrl.push('ForgottenPage');
   }
 
   home(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push('HomePage');
   }
 
   signin() {
