@@ -12,6 +12,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 
 import { HttpModule } from '@angular/http';
 import { IonicPageModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 import { Geolocation }from '@ionic-native/geolocation';
 
 
@@ -40,7 +41,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -14,19 +14,19 @@
         <span *ngIf="invalidPassword">Wrong password</span>
         <span *ngIf="emptyParameter">Make sure you filled all fields</span>
       </div>
-      
+
       <ion-row>
         <ion-col>
           <ion-list>
             <ion-item class="field">
               <ion-label color="primary" stacked>Mail</ion-label>
-              <ion-input type="email" placeholder="" [(ngModel)]="userData.email"></ion-input>
+              <ion-input autocomplete="on" type="email" placeholder="" [(ngModel)]="userData.email"></ion-input>
             </ion-item>
           </ion-list>
           <ion-list>
             <ion-item class="field">
               <ion-label color="primary" stacked>Password</ion-label>
-              <ion-input type="password" color="primary" placeholder="" [(ngModel)]="userData.password"></ion-input>
+              <ion-input autocomplete="on" type="password" color="primary" placeholder="" [(ngModel)]="userData.password"></ion-input>
             </ion-item>
           </ion-list>
         </ion-col>

@@ -10,12 +10,11 @@ export class WeatherProvider {
 
   constructor(public http: Http) {
     console.log('Hello WeatherProvider Provider');
-    this.url = "http://api.openweathermap.org/data/2.5/weather?";
+    this.url = "http://api.openweathermap.org/data/2.5/forecast?zip=";
   }
 
-  getWeather(latitude, longitude) {
-    return this.http.get(this.url + "lat=" + latitude + "&lon=" + longitude +
-    this.apiKey + this.unit)
+  getWeather(location) {
+    return this.http.get(this.url + location + this.apiKey + this.unit)
       .map(res => res.json());
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage,NavController } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ForgottenPage } from '../forgotten/forgotten';
 import { RegisterPage } from '../register/register';
@@ -19,7 +20,7 @@ export class WelcomePage {
   emptyParameter: boolean;
 
   constructor(public navCtrl: NavController, public authService:AuthServiceProvider,
-    private menu: MenuController) {
+    private menu: MenuController, private storage: Storage) {
     this.menu.swipeEnable(false);
     this.invalidMail = false;
     this.invalidPassword = false;
@@ -45,7 +46,8 @@ export class WelcomePage {
     let res = this.authService.postDat(this.userData, "signin");
     console.log(res);
     if(res == "User accepted!") {
-        this.home();
+      this.storage.set('userData', this.userData.email);
+      this.home();
     }
 
     else if(res == "Wrong password!") {

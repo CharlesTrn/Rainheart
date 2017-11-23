@@ -17,7 +17,7 @@ export class MeteoPage {
   constructor(public navCtrl: NavController,private weatherProvider:WeatherProvider,
   private geolocation: Geolocation, private menu: MenuController) {}
 
-  ionViewDidLoad(){
+/*  ionViewDidLoad(){
 
     this.geolocation.getCurrentPosition({enableHighAccuracy : true})
     .then((currentPos) => {
@@ -35,7 +35,7 @@ export class MeteoPage {
 
     console.log(this.currentPos);
 
-  }
+  }*/
 
   ionViewDidEnter() {
     this.menu.swipeEnable(false);
