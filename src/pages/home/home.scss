@@ -10,6 +10,9 @@ page-home{
     justify-content: center;
 
 
+    ion-content{
+      min-height:100vh;
+    }
 
     ion-header{
       .toolbar-background {

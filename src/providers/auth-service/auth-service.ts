@@ -31,15 +31,15 @@ export class AuthServiceProvider {
       m: data.email
     });
 
-    this.http.post(apiUrl + type + ".php", data)
+    /*this.http.post(apiUrl + type + ".php", data)
     .subscribe(mydata => {
     this.mydata.response = mydata["_body"];
 
     }, error => {
     console.log("Oooops!");
-    });
+  });*/
+    return this.http.post(apiUrl + type + ".php", data);
 
-    return this.mydata.response;
   }
 
 }

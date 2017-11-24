@@ -15,7 +15,7 @@ export class RegisterPage {
   responseData : any;
   service: any;
   userData;
-
+  res: any;
   place: any;
   constructor(public navCtrl: NavController, public authService:AuthServiceProvider, private modalCtrl: ModalController) {
     this.userData = {
@@ -55,13 +55,14 @@ export class RegisterPage {
     });
   }
 
-  getAddress() {
 
-  }
 
   signup(){
-    let res = this.authService.postDat(this.userData, "signup");
-    console.log(res);
+    this.authService.postDat(this.userData, "signup")
+    .subscribe(res => {
+      this.res = (<any>res)._body;
+    });
+    console.log(this.res);
   }
 
 

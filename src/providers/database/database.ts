@@ -19,21 +19,19 @@ export class DatabaseProvider {
 
     let data = {
       type: "getLocation",
-      email: mail
+      email: ""
     };
 
+    data.email = mail;
 
-
-    console.log(data.type);
-    console.log(data.email);
-    this.http.post(apiUrl, data)
+    /*this.http.post(apiUrl, data)
     .subscribe(mydata => {
     this.mydata.response = mydata["_body"];
-    console.log(this.mydata.response);
+
     }, error => {
     console.log("Oooops!");
-    });
+  });*/
 
-    return this.mydata.response;
+    return this.http.post(apiUrl, data);
   }
 }

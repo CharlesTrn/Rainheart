@@ -18,7 +18,7 @@ export class WelcomePage {
   invalidPassword: boolean;
   invalidMail: boolean;
   emptyParameter: boolean;
-
+  res: any;
   constructor(public navCtrl: NavController, public authService:AuthServiceProvider,
     private menu: MenuController, private storage: Storage) {
     this.menu.swipeEnable(false);
@@ -43,23 +43,27 @@ export class WelcomePage {
     this.invalidMail = false;
     this.invalidPassword = false;
     this.emptyParameter = false;
-    let res = this.authService.postDat(this.userData, "signin");
-    console.log(res);
-    if(res == "User accepted!") {
-      this.storage.set('userData', this.userData.email);
-      this.home();
-    }
+    this.authService.postDat(this.userData, "signin")
+    .subscribe(res => {
+      this.res = (<any>res)._body;
+      console.log(this.res);
+      if(this.res == "User accepted!") {
+        this.storage.set('userMail', this.userData.email);
+        this.home();
+      }
 
-    else if(res == "Wrong password!") {
-      this.invalidPassword = true;
-    }
+      else if(this.res == "Wrong password!") {
+        this.invalidPassword = true;
+      }
 
-    else if(res == "No such mail!") {
-      this.invalidMail = true;
-    }
+      else if(this.res == "No such mail!") {
+        this.invalidMail = true;
+      }
 
-    else if(res == "Empty parameter!") {
-      this.emptyParameter = true;
-    }
+      else if(this.res == "Empty parameter!") {
+        this.emptyParameter = true;
+      }
+    });
+
   }
 }
