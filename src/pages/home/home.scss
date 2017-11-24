@@ -9,6 +9,9 @@ page-home{
     flex-direction: column;
     justify-content: center;
 
+    .meteoIcon{
+      height: 30px;
+    }
 
     ion-content{
       min-height:100vh;
