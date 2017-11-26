@@ -9,17 +9,21 @@
   </ion-header>
 
   <ion-content padding>
-    <h3>Météo</h3>
-    <div class="w">
-      <div *ngFor = "let meteo of meteoTab">
-        <h2 class="day">{{meteo.day}}</h2>
-        <div class="icon">
-          <img class="meteoIcon" center src="assets/icon/{{meteo.icon}}.png"/>
+      <ion-row class="meteoTab" id="center">
+        <div class="meteoCase" *ngFor = "let meteo of meteoTab">
+          <ion-col>
+            <h2 class="day">{{meteo.day}}</h2>
+            <div class="icon">
+              <img class="meteoIcon" center src="assets/icon/{{meteo.icon}}.png"/>
+            </div>
+            <h1 class="tempMax">{{meteo.tempMax}}°C</h1>
+            <h1 class="tempMin">{{meteo.tempMin}}°C</h1>
+          </ion-col>
         </div>
-        <h1 class="temp">{{meteo.tempMax}}°C</h1>
-        <h1 class="temp">{{meteo.tempMin}}°C</h1>
-      </div>
-    </div>
+      </ion-row>
+
+
+
 
     <h3>Zones du jardin</h3>
     <div class="gallery">

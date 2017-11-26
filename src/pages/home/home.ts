@@ -89,15 +89,20 @@ export class HomePage {
           }
 
           let actualDay = date.getDay();
+          let daysOfWeek = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+          let cptDay = actualDay;
+
           for(let i = 0; i < this.tempMin.length; i++) {
             this.tempMin[i] = Math.min.apply(null, this.temps[i]);
             console.log("Minimum " + i + ": " + this.tempMin[i]);
             this.meteoTab.push({
-              day: actualDay + i,
+              day: daysOfWeek[cptDay],
               icon: icons[i],
               tempMax: this.tempMax[i],
               tempMin: this.tempMin[i]
             });
+            if(cptDay == 6) cptDay = 0;
+            else cptDay++;
           }
 
 

@@ -1,5 +1,3 @@
-$font-family-base: "Rajdhani", sans-serif !default;
-
 page-home{
   #home{
 
@@ -9,12 +7,34 @@ page-home{
     flex-direction: column;
     justify-content: center;
 
+    #center {
+      margin: auto;
+    }
+
+    .meteoCase {
+      margin:auto;
+      .day {
+        font-size: 18px;
+        margin-bottom: -2%;
+      }
+      .tempMax{
+        font-size: 18px;
+        margin-top: -10%;
+
+      }
+      .tempMin{
+        font-size: 13px;
+        margin-top: -30%;
+      }
+    }
+
     .meteoIcon{
       height: 30px;
     }
 
     ion-content{
       min-height:100vh;
+
     }
 
     ion-header{
@@ -47,6 +67,13 @@ page-home{
           margin-right: 15px;
           margin-left: -20px;
       }
+
+      .meteoCase {
+
+      }
+
+
+
 
 
     }
