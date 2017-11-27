@@ -1,16 +1,42 @@
-// http://ionicframework.com/docs/theming/
+ion-menu{
+
+  font-family: "Rajdhani-Regular";
+  color: #99CCFF;
+
+  .cross {
+    float:left;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 20px;
+    color: #99CCFF;
+  }
+
+  .scroll-content {
+
+    ion-list {
+      .man {
+        width: 50px;
+        margin-top: 55px;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .line {
+        border-bottom: solid 2px #99CCFF;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+      }
+    }
+
+  }
 
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+
+  ion-list {
+
+  }
+}

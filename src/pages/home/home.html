@@ -9,30 +9,37 @@
   </ion-header>
 
   <ion-content padding>
-      <ion-row class="meteoTab" id="center">
-        <div class="meteoCase" *ngFor = "let meteo of meteoTab">
-          <ion-col>
-            <h2 class="day">{{meteo.day}}</h2>
-            <div class="icon">
-              <img class="meteoIcon" center src="assets/icon/{{meteo.icon}}.png"/>
-            </div>
-            <h1 class="tempMax">{{meteo.tempMax}}°C</h1>
-            <h1 class="tempMin">{{meteo.tempMin}}°C</h1>
-          </ion-col>
-        </div>
+    <ion-row class="meteoTab" id="center">
+      <div class="meteoCase" *ngFor = "let meteo of meteoTab">
+        <ion-col>
+          <h2 class="day">{{meteo.day}}</h2>
+          <div class="icon">
+            <img class="meteoIcon" center src="assets/icon/{{meteo.icon}}.png"/>
+          </div>
+          <h1 class="tempMax">{{meteo.tempMax}}°C</h1>
+          <h1 class="tempMin">{{meteo.tempMin}}°C</h1>
+        </ion-col>
+      </div>
+    </ion-row>
+
+    <div class="line"></div>
+
+    <img center src="assets/icon/faucet.png" class="faucet"/>
+    <h2 class="debimeter">Debimeter</h2>
+
+    <ion-grid fixed>
+      <ion-row >
+        <ion-col class="zone" *ngFor="let zone of zones" (click)="openZone(zone)">
+          <div class="zone__details">
+            <img src="assets/icon/sprout.png" class="sprout"/>
+            <h2> Zone {{zone.number}}</h2>
+          </div>
+        </ion-col>
       </ion-row>
+    </ion-grid>
 
-
-
-
-    <h3>Zones du jardin</h3>
-    <div class="gallery">
-        <div class="zone" *ngFor="let zone of zones" (click)="openZone(zone)">
-            <div class="zone__details">
-                <input type="text" placeholder="Zone {{zone.number}}" />
-            </div>
-        </div>
-    </div>
-    <button ion-button (click)="addZone()">Ajouter zone</button>
+    <button class="addButton" (click)="addZone()">
+      <img src="assets/icon/plus-button.png" class="plus"/>
+    </button>
   </ion-content>
 </div>

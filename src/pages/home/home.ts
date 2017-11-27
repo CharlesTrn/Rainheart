@@ -33,9 +33,9 @@ export class HomePage {
     this.temps = new Array();
     for (let i=0;i<5;i++) {
      this.temps[i]=new Array();
-     for (let j=0;j<8;j++) {
+     /*for (let j=0;j<8;j++) {
       this.temps[i][j]=0;
-     }
+    }*/
     }
 
 
@@ -57,13 +57,34 @@ export class HomePage {
           let hour = date.getHours() + 1;
           let nextDays = new Array(5);
           let icons = new Array(5);
+
           for(let i = 0; i < nextDays.length; i++) {
+            console.log(day);
+            console.log(month);
             if(hour + 3 >= 24) {
-              nextDays[i] = year + "-" + month + "-" + (day + i + 1);
+              day = day + i + 1;
+              console.log(day);
             }
             else {
-              nextDays[i] = year + "-" + month + "-" + (day + i);
+              day = day + i;
             }
+            if((new Date(year, month, 0).getDate() == 30) && (day == 30)) {
+              if(month == 12) {
+                year = year + 1;
+              }
+              month = month + 1;
+              day = 1;
+              console.log("Ok");
+            }
+            else if((new Date(year, month, 0).getDate() == 31) && (day == 31)) {
+              if(month == 12) {
+                year = year + 1;
+              }
+              month = month + 1;
+              day = 1;
+              console.log("Ok2");
+            }
+            nextDays[i] = year + "-" + month + "-" + day;
 
             console.log(nextDays[i]);
           }
@@ -71,8 +92,9 @@ export class HomePage {
           for(let i = 0; i < cpt.length; i ++) {
               cpt[i] = 0;
           }
-
-          for(let i = 0; i < this.weather.cnt;i++) {
+          console.log(nextDays.length);
+          console.log(this.weather.cnt);
+          for(let i = 0; i < 40; i++) {
             for(let j = 0; j < nextDays.length; j++) {
               if(this.weather.list[i].dt_txt.indexOf(nextDays[j]) !== -1) {
                 icons[j] = this.weather.list[i].weather[0].main;
@@ -85,22 +107,24 @@ export class HomePage {
 
           for(let i = 0; i < this.tempMax.length; i++) {
             this.tempMax[i] = Math.max.apply(null, this.temps[i]);
-            console.log("Maximum " + i + ": " + this.tempMax[i]);
+
           }
 
           let actualDay = date.getDay();
-          let daysOfWeek = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+          let daysOfWeek = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
           let cptDay = actualDay;
 
           for(let i = 0; i < this.tempMin.length; i++) {
             this.tempMin[i] = Math.min.apply(null, this.temps[i]);
-            console.log("Minimum " + i + ": " + this.tempMin[i]);
+
+
             this.meteoTab.push({
               day: daysOfWeek[cptDay],
               icon: icons[i],
-              tempMax: this.tempMax[i],
-              tempMin: this.tempMin[i]
+              tempMax: Math.round(this.tempMax[i]),
+              tempMin: Math.round(this.tempMin[i])
             });
+            console.log(icons[i]);
             if(cptDay == 6) cptDay = 0;
             else cptDay++;
           }
@@ -113,7 +137,7 @@ export class HomePage {
 
   }
 
-
+  
 
 
 
