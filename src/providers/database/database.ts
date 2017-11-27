@@ -24,13 +24,17 @@ export class DatabaseProvider {
 
     data.email = mail;
 
-    /*this.http.post(apiUrl, data)
-    .subscribe(mydata => {
-    this.mydata.response = mydata["_body"];
+    return this.http.post(apiUrl, data);
+  }
 
-    }, error => {
-    console.log("Oooops!");
-  });*/
+  getName(mail) {
+    let data = {
+      type: "getName",
+      email: ""
+    };
+
+    data.email = mail;
+    console.log(data);
 
     return this.http.post(apiUrl, data);
   }

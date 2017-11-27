@@ -2,6 +2,8 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Storage } from '@ionic/storage';
+import { DatabaseProvider } from "../providers/database/database"
 
 
 import { HomePage } from '../pages/home/home';
@@ -21,15 +23,30 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
+  name: any;
+  mail: any;
+
   constructor(public platform: Platform, public statusBar: StatusBar,
-    public splashScreen: SplashScreen) {
+    public splashScreen: SplashScreen,private storage: Storage, private databaseProvider: DatabaseProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Météo', component: MeteoPage },
-      { title: 'Options', component: OptionsPage}
+      { title: 'Home', component: HomePage },
+      { title: 'Settings', component: OptionsPage}
     ];
+
+    storage.get('userMail').then((val) => {
+      this.mail = val;
+      this.databaseProvider.getName(this.mail)
+      .subscribe(name => {
+        this.name = (<any>name)._body;
+      });
+    });
+
+
+
+
   }
 
   initializeApp() {

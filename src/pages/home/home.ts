@@ -31,13 +31,10 @@ export class HomePage {
     this.tempMax = new Array(5);
     this.tempMin = new Array(5);
     this.temps = new Array();
+
     for (let i=0;i<5;i++) {
      this.temps[i]=new Array();
-     /*for (let j=0;j<8;j++) {
-      this.temps[i][j]=0;
-    }*/
-    }
-
+   }
 
     this.menu.swipeEnable(true);
     storage.get('userMail').then((val) => {
@@ -59,41 +56,44 @@ export class HomePage {
           let icons = new Array(5);
 
           for(let i = 0; i < nextDays.length; i++) {
-            console.log(day);
-            console.log(month);
-            if(hour + 3 >= 24) {
-              day = day + i + 1;
-              console.log(day);
+            console.log("i:" + i);
+            console.log("Jour:" + day);
+            console.log("Mois:" + month);
+            console.log("Année:" + year);
+            console.log("Nombre de jours dans le mois:" + new Date(year, month, 0).getDate());
+
+            if((new Date(year, month, 0).getDate() == 30) && (day == 30) ||
+            (new Date(year, month, 0).getDate() == 31) && (day == 31)) {
+              day = 1;
+              if(month == 12) {
+                month = 1
+                year = year + 1;
+              }
+              else {
+                month = month + 1;
+              }
             }
             else {
-              day = day + i;
+              day = day + 1;
             }
-            if((new Date(year, month, 0).getDate() == 30) && (day == 30)) {
-              if(month == 12) {
-                year = year + 1;
-              }
-              month = month + 1;
-              day = 1;
-              console.log("Ok");
+
+            if(day <= 9) {
+              nextDays[i] = year + "-" + month + "-0" + day;
             }
-            else if((new Date(year, month, 0).getDate() == 31) && (day == 31)) {
-              if(month == 12) {
-                year = year + 1;
-              }
-              month = month + 1;
-              day = 1;
-              console.log("Ok2");
+            else {
+              nextDays[i] = year + "-" + month + "-" + day;
             }
-            nextDays[i] = year + "-" + month + "-" + day;
+
 
             console.log(nextDays[i]);
+
           }
+
           let cpt = new Array(5);
           for(let i = 0; i < cpt.length; i ++) {
               cpt[i] = 0;
           }
-          console.log(nextDays.length);
-          console.log(this.weather.cnt);
+
           for(let i = 0; i < 40; i++) {
             for(let j = 0; j < nextDays.length; j++) {
               if(this.weather.list[i].dt_txt.indexOf(nextDays[j]) !== -1) {
@@ -137,7 +137,7 @@ export class HomePage {
 
   }
 
-  
+
 
 
 

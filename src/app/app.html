@@ -4,7 +4,7 @@
 
     <ion-list>
       <img center src="assets/icon/man.png" class="man"/>
-      
+      <h1>{{name}}</h1>
       <div class="line"></div>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
