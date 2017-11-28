@@ -13,10 +13,18 @@ ion-menu{
     color: #99CCFF;
   }
 
+  .logout {
+    margin-right: 30px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+
   .scroll-content {
     color: #99CCFF;
     margin: auto;
     text-align: center;
+
     ion-list {
       .man {
         width: 80px;
@@ -26,6 +34,10 @@ ion-menu{
         margin-left: auto;
         margin-right: auto;
       }
+
+
+
+
 
       .line {
         border-bottom: solid 2px #99CCFF;
@@ -41,12 +53,6 @@ ion-menu{
         font-size: 2.6rem;
       }
     }
-
-  }
-
-
-
-  ion-list {
 
   }
 }

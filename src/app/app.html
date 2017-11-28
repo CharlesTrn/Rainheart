@@ -1,8 +1,8 @@
 <ion-menu [content]="content">
   <ion-content>
-    <h1 class="cross">X</h1>
+    <h1 class="cross" menuClose>X</h1>
 
-    <ion-list>
+    <ion-list no-lines>
       <img center src="assets/icon/man.png" class="man"/>
       <h1>{{name}}</h1>
       <div class="line"></div>
@@ -10,6 +10,8 @@
         {{p.title}}
       </button>
     </ion-list>
+
+    <h1 class="logout" (click)="logout()" menuClose>Log out</h1>
   </ion-content>
 
 </ion-menu>

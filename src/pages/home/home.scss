@@ -15,31 +15,29 @@ page-home{
       max-width: 255px;
       margin: auto;
 
-        .meteoCase {
+      .meteoCase {
 
-          margin-left: 10px;
-          margin-right: 10px;
-          .day {
-            font-size: 18px;
-            margin-bottom: -2%;
-          }
-          .tempMax{
-            font-family: "Rajdhani-SB";
-            font-size: 18px;
-            margin-top: -10%;
+        margin-left: 10px;
+        margin-right: 10px;
+        .day {
+          font-size: 18px;
+          margin-bottom: -2%;
+        }
+        .tempMax{
+          font-family: "Rajdhani-SB";
+          font-size: 18px;
+          margin-top: -10%;
 
-          }
-
-          .meteoIcon{
-            height: 30px;
-          }
-          .tempMin{
-            font-size: 13px;
-            margin-top: -30%;
-          }
         }
 
-
+        .meteoIcon{
+          height: 30px;
+        }
+        .tempMin{
+          font-size: 13px;
+          margin-top: -30%;
+        }
+      }
     }
 
 
@@ -80,7 +78,7 @@ page-home{
       ion-grid{
         max-width: 75%;
         .zone {
-          min-width: 150px;
+          min-width: 100px;
           .zone__details {
             text-align: center;
           }

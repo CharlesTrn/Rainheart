@@ -64,4 +64,9 @@ export class MyApp {
     this.nav.push(page.component);
 
   }
+
+  logout() {
+    this.nav.push(WelcomePage);
+
+  }
 }
