@@ -21,6 +21,7 @@ export class HomePage {
   tempMax: any;
   tempMin: any;
   temps;
+  weatherDescription;
   meteoTab: Array<{day: any, icon: any, tempMax: any, tempMin: any}>;
 
   constructor(public navCtrl: NavController, private weatherProvider: WeatherProvider,
@@ -31,10 +32,15 @@ export class HomePage {
     this.tempMax = new Array(5);
     this.tempMin = new Array(5);
     this.temps = new Array();
+    this.weatherDescription = new Array();
 
     for (let i=0;i<5;i++) {
      this.temps[i]=new Array();
-   }
+    }
+
+   for (let i=0;i<5;i++) {
+    this.weatherDescription[i]=new Array();
+  }
 
     this.menu.swipeEnable(true);
     storage.get('userMail').then((val) => {
@@ -53,36 +59,44 @@ export class HomePage {
           let day = date.getDate();
           let hour = date.getHours() + 1;
           let nextDays = new Array(5);
-          let icons = new Array(5);
 
           for(let i = 0; i < nextDays.length; i++) {
-            console.log("i:" + i);
+            /*console.log("i:" + i);
             console.log("Jour:" + day);
             console.log("Mois:" + month);
             console.log("Année:" + year);
-            console.log("Nombre de jours dans le mois:" + new Date(year, month, 0).getDate());
+            console.log("Nombre de jours dans le mois:" + new Date(year, month, 0).getDate());*/
 
-            if((new Date(year, month, 0).getDate() == 30) && (day == 30) ||
-            (new Date(year, month, 0).getDate() == 31) && (day == 31)) {
-              day = 1;
-              if(month == 12) {
-                month = 1
-                year = year + 1;
+            if(((new Date(year, month, 0).getDate() == 30) && (day == 30)) ||
+            ((new Date(year, month, 0).getDate() == 31) && (day == 31))) {
+              if(hour >= 23) {
+                day = 1;
+                if(month == 12) {
+                  month = 1
+                  year = year + 1;
+                }
+                else {
+                  month = month + 1;
+                }
+              }
+              if(day <= 9) {
+                nextDays[i] = year + "-" + month + "-0" + day;
               }
               else {
-                month = month + 1;
+                nextDays[i] = year + "-" + month + "-" + day;
               }
             }
             else {
+              if(day <= 9) {
+                nextDays[i] = year + "-" + month + "-0" + day;
+              }
+              else {
+                nextDays[i] = year + "-" + month + "-" + day;
+              }
               day = day + 1;
             }
 
-            if(day <= 9) {
-              nextDays[i] = year + "-" + month + "-0" + day;
-            }
-            else {
-              nextDays[i] = year + "-" + month + "-" + day;
-            }
+
 
 
             console.log(nextDays[i]);
@@ -94,16 +108,19 @@ export class HomePage {
               cpt[i] = 0;
           }
 
-          for(let i = 0; i < 40; i++) {
+          for(let i = 0; i < this.weather.cnt; i++) {
             for(let j = 0; j < nextDays.length; j++) {
               if(this.weather.list[i].dt_txt.indexOf(nextDays[j]) !== -1) {
-                icons[j] = this.weather.list[i].weather[0].main;
+                /*console.log("i: " + i + ", j: " + j);
+                console.log(nextDays[j]);*/
                 this.temps[j][cpt[j]] = this.weather.list[i].main.temp;
+                this.weatherDescription[j][cpt[j]] = this.weather.list[i].weather[0].main;
                 cpt[j]++;
               }
             }
           }
-          console.log(this.temps);
+          /*console.log(this.temps);
+          console.log(this.weatherDescription);*/
 
           for(let i = 0; i < this.tempMax.length; i++) {
             this.tempMax[i] = Math.max.apply(null, this.temps[i]);
@@ -113,6 +130,7 @@ export class HomePage {
           let actualDay = date.getDay();
           let daysOfWeek = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
           let cptDay = actualDay;
+          let cptWeatherTab = 0;
 
           for(let i = 0; i < this.tempMin.length; i++) {
             this.tempMin[i] = Math.min.apply(null, this.temps[i]);
@@ -120,13 +138,15 @@ export class HomePage {
 
             this.meteoTab.push({
               day: daysOfWeek[cptDay],
-              icon: icons[i],
+              icon: this.weatherDescription[cptWeatherTab][0],
               tempMax: Math.round(this.tempMax[i]),
               tempMin: Math.round(this.tempMin[i])
             });
-            console.log(icons[i]);
+
             if(cptDay == 6) cptDay = 0;
             else cptDay++;
+
+            cptWeatherTab ++;
           }
 
 
