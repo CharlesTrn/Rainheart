@@ -11,59 +11,60 @@ page-debimeter {
       margin: auto;
     }
 
-    ion-content{
+    .scroll-content{
+      min-height:100vh;
+
       h1 {
         font-family: "Rajdhani-Bold";
-        width: 120px;
+        max-width: 120px;
       }
-      min-height:100vh;
-      .line {
-        border-bottom: solid 2px #99CCFF;
-        width: 75%;
+
+      h2 {
+        font-family: "Rajdhani-Bold";
+        max-width: 150px;
+        max-height: 50px;
+      }
+
+      .pluviometry {
+
+        max-width: 150px;
+        max-height: 50px;
+      }
+
+      .consumption {
+        max-width: 150px;
+        max-height: 50px;
+      }
+
+      .icons {
         margin-left: auto;
         margin-right: auto;
-        max-width: 500px;
-      }
+        max-width: 350px;
+        height: 150px;
 
-      .faucet {
+        .faucet {
+          transform:rotateY(160deg);
+          display:block;
+          width: 45px;
+          float: left;
 
-        transform:rotateY(160deg);
-        display:block;
-        width: 45px;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top: 10px;
-        margin-bottom: -10px;
-      }
+        }
 
-      .debimeter {
-        text-align: center;
-      }
+        .stop {
+          display:block;
+          width: 45px;
+          float: left;
 
-      .sprout {
-        height: 80px;
-        margin-bottom: 1%;
-      }
-      ion-grid{
-        max-width: 75%;
-        .zone {
-          min-width: 100px;
-          .zone__details {
-            text-align: center;
-          }
+        }
+
+        .pluviometer {
+          display:block;
+          width: 45px;
+          float: left;
+
         }
       }
 
-      .addButton {
-        width: 40px;
-        background: white;
-        display:block;
-        margin-left:auto;
-        margin-right:auto;
-        .plus{
-          width: 40px;
-        }
-      }
 
     }
 
@@ -98,9 +99,6 @@ page-debimeter {
           margin-right: 15px;
           margin-left: -20px;
       }
-
-
     }
-
   }
 }
