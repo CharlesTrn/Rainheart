@@ -11,7 +11,7 @@ import { MeteoPage } from '../pages/meteo/meteo';
 import { OptionsPage } from '../pages/options/options';
 import { ZonePage } from '../pages/zone/zone';
 import { WelcomePage } from '../pages/welcome/welcome';
-
+import { DebimeterPage } from '../pages/debimeter/debimeter';
 
 @Component({
   templateUrl: 'app.html'

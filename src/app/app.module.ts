@@ -35,7 +35,6 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     ZonePage,
     WelcomePage,
 
-
   ],
   imports: [
     BrowserModule,

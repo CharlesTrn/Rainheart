@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { WeatherProvider } from "../../providers/weather/weather";
 import { DatabaseProvider } from "../../providers/database/database"
 import { ZonePage } from '../zone/zone';
+import { DebimeterPage } from '../debimeter/debimeter';
 
 @IonicPage()
 @Component({
@@ -158,7 +159,9 @@ export class HomePage {
   }
 
 
-
+  openDebimeter() {
+    this.navCtrl.push('DebimeterPage');
+  }
 
 
 
