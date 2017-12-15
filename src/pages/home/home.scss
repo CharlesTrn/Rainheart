@@ -1,7 +1,7 @@
 page-home{
   #home{
 
-    font-family: "Rajdhani-Regular";
+    font-family: "Rajdhani-Regular", sans-serif;
     color: white;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ page-home{
           text-align: center;
         }
         .tempMax{
-          font-family: "Rajdhani-SB";
+          font-family: "Rajdhani-SB", sans-serif;
           font-size: 18px;
           margin-top: -10%;
           text-align: center;
@@ -113,7 +113,7 @@ page-home{
 
 
       ion-title{
-        font-family: "Rajdhani-Bold";
+        font-family: "Rajdhani-Bold", sans-serif;
         width: 125px;
         float: right;
         margin-top: 20px;
