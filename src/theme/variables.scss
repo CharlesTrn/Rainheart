@@ -86,36 +86,41 @@ $text-input-placeholder-color: #ffffff;
 // --------------------------------------------------
 
 @font-face {
-  font-family: "Rajdhani-Bold";
-  font-style: bold;
-  font-weight: normal;
-  src: url("../assets/fonts/Rajdhani-Bold.ttf");
-}
-
-@font-face {
-  font-family: "Rajdhani-Light";
-  font-style: light;
-  font-weight: normal;
-  src: url("../assets/fonts/Rajdhani-Light.ttf");
-}
-
-@font-face {
-  font-family: "Rajdhani-Regular";
+  font-family: 'Rajdhani-Light';
   font-style: normal;
-  font-weight: normal;
-  src: url("../assets/fonts/Rajdhani-Regular.ttf");
+  font-weight: 300;
+  src: local('Rajdhani Light'), local('Rajdhani-Light'), url(../assets/fonts/Rajdhani_Light.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
 
 @font-face {
-  font-family: "Rajdhani-Medium";
-  font-style: medium;
-  font-weight: normal;
-  src: url("../assets/fonts/Rajdhani-Medium.ttf");
+  font-family: 'Rajdhani-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rajdhani Regular'), local('Rajdhani-Regular'), url(../assets/fonts/Rajdhani_Regular.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
 
 @font-face {
-  font-family: "Rajdhani-SB";
-  font-style: semi-bold;
-  font-weight: normal;
-  src: url("../assets/fonts/Rajdhani-SemiBold.ttf");
+  font-family: 'Rajdhani-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Rajdhani Medium'), local('Rajdhani-Medium'), url(../assets/fonts/Rajdhani_Medium.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Rajdhani-SB';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Rajdhani SemiBold'), local('Rajdhani-SemiBold'), url(../assets/fonts/Rajdhani_SemiBold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Rajdhani-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Rajdhani Bold'), local('Rajdhani-Bold'), url(../assets/fonts/Rajdhani_Bold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
