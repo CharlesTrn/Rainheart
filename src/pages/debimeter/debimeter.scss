@@ -1,7 +1,7 @@
 page-debimeter {
 
 #debimeter{
-    font-family: "Rajdhani-Regular";
+    font-family: "Rajdhani-Regular", sans-serif;
     color: white;
     display: flex;
     flex-direction: column;
@@ -15,13 +15,13 @@ page-debimeter {
       min-height:100vh;
 
       h1 {
-        font-family: "Rajdhani-Bold";
+        font-family: "Rajdhani-Bold", sans-serif;
         max-width: 120px;
 
       }
 
       h2 {
-        font-family: "Rajdhani-Bold";
+        font-family: "Rajdhani-Bold", sans-serif;
         max-width: 150px;
         max-height: 50px;
       }
@@ -89,7 +89,7 @@ page-debimeter {
 
 
       ion-title{
-        font-family: "Rajdhani-Bold";
+        font-family: "Rajdhani-Bold", sans-serif;
         width: 125px;
         float: right;
         margin-top: 20px;
