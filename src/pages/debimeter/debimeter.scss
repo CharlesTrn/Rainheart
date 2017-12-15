@@ -17,12 +17,21 @@ page-debimeter {
       h1 {
         font-family: "Rajdhani-Bold";
         max-width: 120px;
+
       }
 
       h2 {
         font-family: "Rajdhani-Bold";
         max-width: 150px;
         max-height: 50px;
+      }
+
+      ion-col {
+        margin: auto;
+      }
+
+      p {
+        text-align: center;
       }
 
       .pluviometry {
@@ -36,35 +45,35 @@ page-debimeter {
         max-height: 50px;
       }
 
+      .faucet {
+        transform:rotateY(160deg);
+        display:block;
+        width: 45px;
+        margin:auto;
+
+      }
+
+      .stop {
+        display:block;
+        width: 45px;
+        margin:auto;
+      }
+
+      .pluviometer {
+        display:block;
+        width: 45px;
+        margin:auto;
+        margin-top: -22px;
+      }
+
       .icons {
         margin-left: auto;
         margin-right: auto;
         max-width: 350px;
         height: 150px;
+        margin-top: 30px;
 
-        .faucet {
-          transform:rotateY(160deg);
-          display:block;
-          width: 45px;
-          float: left;
-
-        }
-
-        .stop {
-          display:block;
-          width: 45px;
-          float: left;
-
-        }
-
-        .pluviometer {
-          display:block;
-          width: 45px;
-          float: left;
-
-        }
       }
-
 
     }
 

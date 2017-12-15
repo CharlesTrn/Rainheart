@@ -10,11 +10,27 @@
 
   <ion-content padding >
     <h1 id="center">Debimeter</h1>
-    <div class="icons">
-      <img  src="assets/icon/faucet.png" class="faucet"/>
-      <img  src="assets/icon/stop.png" class="stop"/>
-      <img  src="assets/icon/pluviometer.png" class="pluviometer"/>
-    </div>
+    <ion-grid class="icons">
+      <ion-row>
+        <ion-col>
+          <p *ngIf="flow">{{flow}}</p>
+        </ion-col>
+        <ion-col>
+          <img  src="assets/icon/faucet.png" class="faucet"/>
+        </ion-col>
+        <ion-col>
+          <img  src="assets/icon/stop.png" class="stop"/>
+        </ion-col>
+        <ion-col>
+          <img  src="assets/icon/pluviometer.png" class="pluviometer"/>
+        </ion-col>
+        <ion-col>
+          <p *ngIf="rain">{{rain}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
     <div class="pluviometry">
       <h2>Pluviometry</h2>
     </div>
