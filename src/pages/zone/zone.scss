@@ -1,0 +1,120 @@
+page-zone {
+
+#zone{
+    font-family: "Rajdhani-Regular", sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    #center {
+      margin: auto;
+    }
+
+    .scroll-content{
+      min-height:100vh;
+
+      h1 {
+        font-family: "Rajdhani-Bold", sans-serif;
+        text-align: center;
+        max-width: 120px;
+
+      }
+
+      h2 {
+        font-family: "Rajdhani-Bold", sans-serif;
+        max-width: 200px;
+        max-height: 50px;
+      }
+
+      ion-col {
+        margin: auto;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      .pluviometry {
+
+        max-width: 150px;
+        max-height: 50px;
+      }
+
+      .consumption {
+        max-width: 150px;
+        max-height: 50px;
+      }
+
+      .faucet {
+        transform:rotateY(160deg);
+        display:block;
+        width: 45px;
+        margin:auto;
+
+      }
+
+      .stop {
+        display:block;
+        width: 45px;
+        margin:auto;
+      }
+
+      .pluviometer {
+        display:block;
+        width: 45px;
+        margin:auto;
+        margin-top: -22px;
+      }
+
+      .icons {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 350px;
+        height: 150px;
+        margin-top: 30px;
+
+      }
+
+    }
+
+    .WIP {
+      width: 400px;
+      margin: auto;
+      text-align: center;
+    }
+
+    ion-header{
+      .toolbar-background {
+        background: #99CCFF;
+      }
+      .toolbar-title{
+        color: white;
+        width: 125px;
+        margin: auto;
+      }
+
+
+      ion-title{
+        font-family: "Rajdhani-Bold", sans-serif;
+        width: 125px;
+        float: right;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: -10px;
+      }
+
+      button {
+        color: white;
+      }
+
+      .plant{
+          height: 70px;
+          float: right;
+          margin-right: 15px;
+          margin-left: -20px;
+      }
+    }
+  }
+}

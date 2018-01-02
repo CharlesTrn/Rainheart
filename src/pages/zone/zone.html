@@ -1,12 +1,42 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Zone</ion-title>
-  </ion-navbar>
-</ion-header>
+<div id="zone">
+  <ion-header class="navbar">
+    <ion-navbar hideBackButton>
+      <button ion-button menuToggle><ion-icon name="menu"></ion-icon>
+      </button>
+      <img center src="assets/icon/plantndrop.png" class="plant"/>
+      <ion-title>RainHeart</ion-title>
+    </ion-navbar>
+  </ion-header>
 
-<ion-content padding class="">
+  <ion-content padding >
+    <h1 id="center">{{zoneName}}</h1>
+    <ion-grid class="icons">
+      <ion-row>
+        <ion-col>
+          <p *ngIf="rain">{{rain}}</p>
+        </ion-col>
+        <ion-col>
+          <img  src="assets/icon/Rain.png" class="rain"/>
+        </ion-col>
+        <ion-col>
+          <img  src="assets/icon/stop.png" class="stop"/>
+        </ion-col>
+        <ion-col>
+          <img  src="assets/icon/Clear.png" class="clear"/>
+        </ion-col>
+        <ion-col>
+          <p *ngIf="brightness">{{brightness}}</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-</ion-content>
+
+    <div class="plants">
+      <h2>Plants types:</h2>
+      <div class="WIP">
+        <h2>Work in progress</h2>
+        <img center src="assets/icon/WIP.png" class="WIP"/>
+      </div>
+    </div>
+  </ion-content>
+</div>

@@ -6,7 +6,6 @@ import { MyApp } from './app.component';
 
 import { MeteoPage } from '../pages/meteo/meteo';
 import { OptionsPage } from '../pages/options/options';
-import { ZonePage } from '../pages/zone/zone';
 import { WelcomePage } from '../pages/welcome/welcome';
 
 
@@ -32,8 +31,8 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
     MeteoPage,
     OptionsPage,
-    ZonePage,
-    WelcomePage,
+
+    WelcomePage
 
   ],
   imports: [
@@ -47,8 +46,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     MyApp,
     MeteoPage,
     OptionsPage,
-    ZonePage,
-    WelcomePage,
+    WelcomePage
 
 
   ],

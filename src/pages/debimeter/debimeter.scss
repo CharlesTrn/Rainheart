@@ -22,7 +22,7 @@ page-debimeter {
 
       h2 {
         font-family: "Rajdhani-Bold", sans-serif;
-        max-width: 150px;
+        max-width: 200px;
         max-height: 50px;
       }
 
@@ -35,14 +35,22 @@ page-debimeter {
       }
 
       .pluviometry {
-
         max-width: 150px;
-        max-height: 50px;
+        .WIP {
+          width: 400px;
+          margin: auto;
+          text-align: center;
+        }
       }
 
       .consumption {
         max-width: 150px;
         max-height: 50px;
+        .WIP {
+          width: 400px;
+          margin: auto;
+          text-align: center;
+        }
       }
 
       .faucet {
@@ -76,6 +84,8 @@ page-debimeter {
       }
 
     }
+
+
 
     ion-header{
       .toolbar-background {

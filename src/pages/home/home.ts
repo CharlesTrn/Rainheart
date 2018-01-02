@@ -23,7 +23,7 @@ export class HomePage {
   index: number;
   userData: any;
   modules: any;
-  zones: Array<{number: number, icon: string, page: any}>;
+  zones: Array<{name: string, icon: string}>;
   tempMax: any;
   tempMin: any;
   temps;
@@ -61,7 +61,22 @@ export class HomePage {
     });
   }
 
+
+  /****************************************************************************
+    Function name: getWeather()
+    Arguments: N/A
+    Return: N/A
+
+    Description: Get the weather forecast data from OpenWeatherMap API through our
+    weatherProvider.
+
+  ****************************************************************************/
   getWeather() {
+    /*Use the getWeather function of the weatherProvider using the user's
+    location data taken from the database to ask the OpenWeatherMap API the
+    5-days weather forecast and link our weather variable to the result of the
+    request*/
+
     this.weatherProvider.getWeather(this.data)
     .subscribe(weather=> {
       this.weather = weather;
@@ -168,24 +183,22 @@ export class HomePage {
     .subscribe(modules => {
       this.modules = (<any>modules)._body.split("/");
       console.log(this.modules);
+      for(let i = 0; i < this.modules.length; i++) {
+        this.zones.push({
+          name: this.modules[i].split("-")[1],
+          icon: "",
+        });
+      }
+      this.storage.set('zones', this.zones);
     });
-    /*this.zones.push({
-      number: this.index,
-      icon: "",
-      page: ZonePage
-    });*/
   }
 
   addZone() {
-    this.index += 1;
-    this.zones.push({
-      number: this.index,
-      icon: "",
-      page: ZonePage
-    });
+    //this.navCtrl.push(zone.page);
   }
 
   openZone(zone) {
-    this.navCtrl.push(zone.page);
+    this.storage.set('zoneID', zone.name);
+    this.navCtrl.push('ZonePage');
   }
 }
