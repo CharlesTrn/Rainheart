@@ -4,8 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
 import { MyApp } from './app.component';
 
-import { MeteoPage } from '../pages/meteo/meteo';
-import { OptionsPage } from '../pages/options/options';
+
 import { WelcomePage } from '../pages/welcome/welcome';
 
 
@@ -28,12 +27,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 @NgModule({
   declarations: [
     MyApp,
-
-    MeteoPage,
-    OptionsPage,
-
     WelcomePage
-
   ],
   imports: [
     BrowserModule,
@@ -44,11 +38,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    MeteoPage,
-    OptionsPage,
     WelcomePage
-
-
   ],
   providers: [
     StatusBar,

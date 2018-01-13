@@ -69,4 +69,26 @@ export class DatabaseProvider {
     return this.http.post(apiUrl, data);
   }
 
+  setLocation(mail, location) {
+    let data = {
+      type: "setLocation",
+      email: "",
+      location: ""
+    };
+    data.email = mail;
+    data.location = location;
+    return this.http.post(apiUrl, data);
+  }
+
+  setMail(mail, newMail) {
+    let data = {
+      type: "setMail",
+      email: "",
+      newMail: ""
+    };
+    data.email = mail;
+    data.newMail = newMail;
+    return this.http.post(apiUrl, data);
+  }
+
 }

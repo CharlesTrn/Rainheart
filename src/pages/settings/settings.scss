@@ -1,0 +1,105 @@
+page-settings {
+
+#settings{
+    font-family: "Rajdhani-Regular", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #99CCFF;
+
+    #center {
+      margin: auto;
+    }
+
+    .scroll-content{
+      min-height:100vh;
+
+      h1 {
+        font-family: "Rajdhani-Bold", sans-serif;
+        max-width: 500px;
+        color: #99CCFF;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+
+      ion-col {
+        margin: auto;
+      }
+
+      .field{
+        color: #99CCFF;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+        font-size: 2.6rem;
+      }
+
+      .line {
+        border-bottom: solid 2px #99CCFF;
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+        margin-bottom: 20px;
+      }
+
+      .man {
+        width: 80px;
+        margin-top: 55px;
+        margin-bottom: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .validation{
+        text-transform:lowercase;
+        text-transform: capitalize;
+        background-color: #99CCFF;
+        color: white;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+    }
+
+
+
+    ion-header{
+      .toolbar-background {
+        background: #99CCFF;
+      }
+      .toolbar-title{
+        color: white;
+        width: 125px;
+        margin: auto;
+      }
+
+
+      ion-title{
+        font-family: "Rajdhani-Bold", sans-serif;
+        width: 125px;
+        float: right;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: -10px;
+      }
+
+      button {
+        color: white;
+      }
+
+      .plant{
+          height: 70px;
+          float: right;
+          margin-right: 15px;
+          margin-left: -20px;
+      }
+    }
+  }
+}

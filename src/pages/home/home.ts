@@ -107,7 +107,13 @@ export class HomePage {
               month = month + 1;
             }
           }
-          if(day <= 9) {
+          if(day <= 9 && month <= 9) {
+            nextDays[i] = year + "-0" + month + "-0" + day;
+          }
+          else if(day > 9 && month <= 9) {
+            nextDays[i] = year + "-0" + month + "-" + day;
+          }
+          else if(day <= 9 && month > 9) {
             nextDays[i] = year + "-" + month + "-0" + day;
           }
           else {
@@ -115,7 +121,13 @@ export class HomePage {
           }
         }
         else {
-          if(day <= 9) {
+          if(day <= 9 && month <= 9) {
+            nextDays[i] = year + "-0" + month + "-0" + day;
+          }
+          else if(day > 9 && month <= 9) {
+            nextDays[i] = year + "-0" + month + "-" + day;
+          }
+          else if(day <= 9 && month > 9) {
             nextDays[i] = year + "-" + month + "-0" + day;
           }
           else {
@@ -124,7 +136,7 @@ export class HomePage {
           day = day + 1;
         }
 
-        console.log(nextDays[i]);
+        /*console.log(nextDays[i]);*/
 
       }
 
@@ -135,6 +147,8 @@ export class HomePage {
 
       for(let i = 0; i < this.weather.cnt; i++) {
         for(let j = 0; j < nextDays.length; j++) {
+          /*console.log(nextDays[j]);
+          console.log(this.weather.list[i].dt_txt);*/
           if(this.weather.list[i].dt_txt.indexOf(nextDays[j]) !== -1) {
             /*console.log("i: " + i + ", j: " + j);
             console.log(nextDays[j]);*/

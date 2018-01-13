@@ -1,0 +1,53 @@
+<div id="settings">
+  <ion-header class="navbar">
+    <ion-navbar hideBackButton>
+      <button ion-button menuToggle><ion-icon name="menu"></ion-icon>
+      </button>
+      <img center src="assets/icon/plantndrop.png" class="plant"/>
+      <ion-title>RainHeart</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+    <img center src="assets/icon/man.png" class="man"/>
+    <h1>{{name}}</h1>
+    <div class="line"></div>
+    <h1>Change your information: </h1>
+    <ion-row>
+      <ion-col>
+
+        <ion-list>
+          <ion-item class="field">
+            <ion-label color="secondary" stacked>Mail</ion-label>
+            <ion-input type="email" placeholder="" ></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-list>
+          <ion-item class="field">
+            <ion-label color="secondary" stacked>Password</ion-label>
+            <ion-input type="password" color="primary" placeholder="" ></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-list>
+          <ion-item class="field">
+            <ion-label color="secondary" stacked>Location</ion-label>
+            <ion-input id="autocomplete"  type="text" placeholder=""></ion-input>
+          </ion-item>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button ion-button color="light" outline="true" round="true"
+        small="true" class="validation" (click)="userChanges()">
+          OK
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-content>
+</div>

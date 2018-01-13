@@ -7,8 +7,7 @@ import { DatabaseProvider } from "../providers/database/database"
 
 
 import { HomePage } from '../pages/home/home';
-import { MeteoPage } from '../pages/meteo/meteo';
-import { OptionsPage } from '../pages/options/options';
+import { SettingsPage } from '../pages/settings/settings';
 import { ZonePage } from '../pages/zone/zone';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { DebimeterPage } from '../pages/debimeter/debimeter';
@@ -32,8 +31,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Settings', component: OptionsPage}
+      { title: 'Home', component: 'HomePage' },
+      { title: 'Settings', component: 'SettingsPage'}
     ];
 
     storage.get('userMail').then((val) => {
