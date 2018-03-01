@@ -1,8 +1,9 @@
 <div id="zone">
   <ion-header class="navbar">
-    <ion-navbar hideBackButton>
-      <button ion-button menuToggle><ion-icon name="menu"></ion-icon>
-      </button>
+    <ion-navbar>
+      <button ion-button menuToggle left>
+        <ion-icon name="menu"></ion-icon>
+    </button>
       <img center src="assets/icon/plantndrop.png" class="plant"/>
       <ion-title>RainHeart</ion-title>
     </ion-navbar>
@@ -19,7 +20,8 @@
           <img  src="assets/icon/Rain.png" class="rain"/>
         </ion-col>
         <ion-col>
-          <img  src="assets/icon/stop.png" class="stop"/>
+          <img *ngIf="valve_state == true" (click)="stopWater()" src="assets/icon/stop.png" class="stop"/>
+          <img *ngIf="valve_state == false" (click)="waterNow()" src="assets/icon/start.svg" class="stop"/>
         </ion-col>
         <ion-col>
           <img  src="assets/icon/Clear.png" class="clear"/>
@@ -34,7 +36,7 @@
     <div class="plants">
       <h2>Plants types:</h2>
       <div class="WIP">
-        <h2>Work in progress</h2>
+        <h2>Work in progress...</h2>
         <img center src="assets/icon/WIP.png" class="WIP"/>
       </div>
     </div>

@@ -5,6 +5,12 @@ page-register {
     font-family: "Rajdhani-Bold", sans-serif;
     color: white;
 
+    .wrongFill {
+      color: red;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     .man{
       height: 80px;

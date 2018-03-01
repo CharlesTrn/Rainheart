@@ -3,10 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
 import { MyApp } from './app.component';
-
-
 import { WelcomePage } from '../pages/welcome/welcome';
-
 
 import { HttpModule } from '@angular/http';
 import { IonicPageModule } from 'ionic-angular';

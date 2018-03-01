@@ -14,6 +14,6 @@ export class ForgottenPage {
   }
 
   home(){
-    this.navCtrl.push('HomePage');
+    //this.navCtrl.push('HomePage');
   }
 }

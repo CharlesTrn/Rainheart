@@ -23,7 +23,7 @@ export class HomePage {
   index: number;
   userData: any;
   modules: any;
-  zones: Array<{name: string, icon: string}>;
+  zones: Array<{name: string, id_module: string, valve_state: string, icon: string}>;
   tempMax: any;
   tempMin: any;
   temps;
@@ -195,15 +195,20 @@ export class HomePage {
   getZone() {
     this.databaseProvider.getZone(this.userData)
     .subscribe(modules => {
-      this.modules = (<any>modules)._body.split("/");
-      console.log(this.modules);
-      for(let i = 0; i < this.modules.length; i++) {
-        this.zones.push({
-          name: this.modules[i].split("-")[1],
-          icon: "",
-        });
+      console.log((<any>modules)._body);
+      if(modules[0] != "") {
+        this.modules = (<any>modules)._body.split("/");
+        console.log(this.modules);
+        for(let i = 0; i < this.modules.length; i++) {
+          this.zones.push({
+            name: this.modules[i].split("-")[1],
+            id_module: this.modules[i].split("-")[0],
+            valve_state: this.modules[i].split("-")[2],
+            icon: "",
+          });
+        }
+        this.storage.set('zones', this.zones);
       }
-      this.storage.set('zones', this.zones);
     });
   }
 

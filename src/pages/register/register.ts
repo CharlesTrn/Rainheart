@@ -17,6 +17,10 @@ export class RegisterPage {
   userData;
   res: any;
   place: any;
+  userCreated;
+  alreadyExist;
+  emptyField;
+
   constructor(public navCtrl: NavController, public authService:AuthServiceProvider, private modalCtrl: ModalController) {
     this.userData = {
       "firstname": "","password": "", "lastname": "","email": "",
@@ -24,6 +28,9 @@ export class RegisterPage {
       "pays": "", "phone": ""
     };
     console.log(this.userData);
+    this.userCreated = false;
+    this.alreadyExist = false;
+    this.emptyField = false;
   }
 
 
@@ -61,6 +68,21 @@ export class RegisterPage {
     this.authService.postDat(this.userData, "signup")
     .subscribe(res => {
       this.res = (<any>res)._body;
+      if(this.res == "Module FlowMeter created<br>") {
+        this.alreadyExist = false;
+        this.emptyField = false;
+        this.userCreated = true;
+      }
+      else if(this.res == "User already exists with this mail!") {
+        this.userCreated = false;
+        this.emptyField = false;
+        this.alreadyExist = true;
+      }
+      else if(this.res == "Empty parameter!") {
+        this.userCreated = false;
+        this.alreadyExist = false;
+        this.emptyField = true;
+      }
     });
     console.log(this.res);
   }

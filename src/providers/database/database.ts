@@ -91,4 +91,28 @@ export class DatabaseProvider {
     return this.http.post(apiUrl, data);
   }
 
+  openModuleValve(mail, IDModule) {
+    let data = {
+      type: "openModuleValve",
+      email: "",
+      id_module: ""
+    };
+    data.email = mail;
+    data.id_module = IDModule;
+    console.log(data.id_module);
+    return this.http.post(apiUrl, data);
+  }
+
+  closeModuleValve(mail, IDModule) {
+    let data = {
+      type: "closeModuleValve",
+      email: "",
+      id_module: ""
+    };
+    data.email = mail;
+    data.id_module = IDModule;
+    console.log(data.id_module);
+    return this.http.post(apiUrl, data);
+  }
+
 }

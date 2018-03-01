@@ -24,6 +24,7 @@ export class SettingsPage {
   service: any;
   userData;
   res;
+  place;
 
   constructor(public navCtrl: NavController, private menu: MenuController,
   private storage: Storage, private databaseProvider: DatabaseProvider) {
@@ -66,8 +67,8 @@ export class SettingsPage {
       }
     });
     this.userData = JSON.stringify({
-      stn : userData.numRue, st: userData.nomRue,
-      c : userData.ville, p: userData.pays, z: userData.codePost
+      stn : this.userData.numRue, st: this.userData.nomRue,
+      c : this.userData.ville, p: this.userData.pays, z: this.userData.codePost
     });
   }
 
